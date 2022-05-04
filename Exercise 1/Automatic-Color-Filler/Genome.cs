@@ -2,8 +2,13 @@ using System.Collections.Generic;
 
 namespace Automatic_Color_Filler
 {
-    public struct Genome
+    public class Genome
     {
-        public List<string> Sequences;
+        public Genome()
+        {
+            Sequence = new List<string>();
+        }
+        
+        public List<string> Sequence;
     }
 }

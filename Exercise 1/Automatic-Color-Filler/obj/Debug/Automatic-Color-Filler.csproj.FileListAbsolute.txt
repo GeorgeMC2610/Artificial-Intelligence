@@ -7,3 +7,4 @@ D:\GitHub Repositories\Artificial-Intelligence\Exercise 1\Automatic-Color-Filler
 D:\GitHub Repositories\Artificial-Intelligence\Exercise 1\Automatic-Color-Filler\obj\Debug\Automatic-Color-Filler.csproj.CoreCompileInputs.cache
 D:\GitHub Repositories\Artificial-Intelligence\Exercise 1\Automatic-Color-Filler\obj\Debug\Automatic_Color_Filler.exe
 D:\GitHub Repositories\Artificial-Intelligence\Exercise 1\Automatic-Color-Filler\obj\Debug\Automatic_Color_Filler.pdb
+D:\GitHub Repositories\Artificial-Intelligence\Exercise 1\Automatic-Color-Filler\obj\Debug\Automatic_Color_Filler.Form1.resources

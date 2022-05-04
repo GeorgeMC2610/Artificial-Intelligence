@@ -16,5 +16,14 @@ namespace Automatic_Color_Filler
         {
             InitializeComponent();
         }
+
+        private void buttonGenerateGenome_Click(object sender, EventArgs e)
+        {
+            var genome = Genetic.Generate_Genome();
+
+            labelFitness.Text = $@"Fitness: {Genetic.Fitness(genome)}";
+            labelGenome.Size = new Size(99999, 99);
+            labelGenome.Text = $@"Genome: {string.Join("", genome.Sequence)}";
+        }
     }
 }
