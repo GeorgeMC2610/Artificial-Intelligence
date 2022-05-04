@@ -99,9 +99,18 @@ namespace Automatic_Color_Filler
 
         public static Population Selection_Pair()
         {
+            return null;
+        }
+
+        public static Tuple<Genome, Genome> Single_Point_Crossover(Genome a, Genome b)
+        {
+            int point = RNG.Next(1, a.Sequence.Count - 1);
+
+            //ΓΙΝΕΤΑΙ ΑΥΤΟ;!!
+            for (int i = 1; i < point; i++)
+                (a.Sequence[i], b.Sequence[i]) = (b.Sequence[i], a.Sequence[i]);
             
-            
-            return new Population();
+            return new Tuple<Genome, Genome>(a, b);
         }
 
         public static Genome Mutation(Genome genome)
