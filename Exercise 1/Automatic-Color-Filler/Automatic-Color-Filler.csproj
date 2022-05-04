@@ -53,6 +53,8 @@
             <DependentUpon>Form1.cs</DependentUpon>
         </Compile>
         <Compile Include="Genetic.cs" />
+        <Compile Include="Genome.cs" />
+        <Compile Include="Population.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
