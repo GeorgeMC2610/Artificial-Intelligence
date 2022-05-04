@@ -48,19 +48,19 @@
             // 
             // labelFitness
             // 
-            this.labelFitness.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelFitness.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelFitness.Location = new System.Drawing.Point(12, 9);
             this.labelFitness.Name = "labelFitness";
-            this.labelFitness.Size = new System.Drawing.Size(100, 23);
+            this.labelFitness.Size = new System.Drawing.Size(892, 23);
             this.labelFitness.TabIndex = 1;
             this.labelFitness.Text = "Fitness";
             // 
             // labelGenome
             // 
-            this.labelGenome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelGenome.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.labelGenome.Location = new System.Drawing.Point(12, 32);
             this.labelGenome.Name = "labelGenome";
-            this.labelGenome.Size = new System.Drawing.Size(100, 23);
+            this.labelGenome.Size = new System.Drawing.Size(892, 23);
             this.labelGenome.TabIndex = 2;
             this.labelGenome.Text = "Genome";
             // 

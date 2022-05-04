@@ -23,7 +23,7 @@ namespace Automatic_Color_Filler
 
             labelFitness.Text = $@"Fitness: {Genetic.Fitness(genome)}";
             labelGenome.Size = new Size(99999, 99);
-            labelGenome.Text = $@"Genome: {string.Join("", genome.Sequence)}";
+            labelGenome.Text = $"Genome: {string.Join("", genome.Sequence)},\nBoutsa: {string.Join("", Genetic.Mutation(genome).Sequence)}";
         }
     }
 }

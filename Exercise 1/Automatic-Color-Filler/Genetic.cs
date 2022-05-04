@@ -103,5 +103,15 @@ namespace Automatic_Color_Filler
             
             return new Population();
         }
+
+        public static Genome Mutation(Genome genome)
+        {
+            int random_index = RNG.Next(genome.Sequence.Count);
+
+            if (RNG.Next(0, 2) == 1) genome.Sequence[random_index] = (genome.Sequence[random_index][0] == '0'? '1' : '0') + genome.Sequence[random_index].Remove(0, 1);
+            else                     genome.Sequence[random_index] =  genome.Sequence[random_index].Substring(1, 1) + (genome.Sequence[random_index][1] == '0'? '1' : '0');
+            
+            return genome;
+        }
     }
 }
