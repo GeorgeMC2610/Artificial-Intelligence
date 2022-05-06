@@ -7,6 +7,16 @@ namespace Automatic_Color_Filler
     {
         public static Random RNG = new Random();
         
+        /// <summary>
+        /// <b>Generates a <see cref="Genome"/> with a random sequence of colours.</b>
+        /// A Genome has a 32-bit sequence which determines what colour a box has.
+        /// Possible bits are:
+        /// - 00 blue
+        /// - 01 red
+        /// - 10 green
+        /// - 11 yellow
+        /// </summary>
+        /// <returns>A Genome with random colours.</returns>
         public static Genome Generate_Genome()
         {
             // 00 is blue
@@ -21,7 +31,12 @@ namespace Automatic_Color_Filler
 
             return genome;
         }
-
+        
+        /// <summary>
+        /// Generates a <see cref="Genome"/> population of size n=<see cref="PopulationSize"/>
+        /// </summary>
+        /// <param name="PopulationSize">The population size of Genomes.</param>
+        /// <returns>A population containing n Genomes, all with different colours and fitness.</returns>
         public static Population Generate_Population(int PopulationSize)
         {
             Population population = new Population();
@@ -32,8 +47,19 @@ namespace Automatic_Color_Filler
             return population;
         }
 
+        /// <summary>
+        /// <b>Determines how optimal a solution is.</b>
+        /// Since all boxes have to be coloured differently compared to their neighbours,
+        /// minimum fitness is 0, which means that all boxes have the same colour. Maximum fitness (optimal solution)
+        /// is 42, which means that all 16 boxes have different colours compared to their neighbours. 
+        /// </summary>
+        /// <param name="genome">The given Genome (containing 0 and 1).</param>
+        /// <returns></returns>
         public static int Fitness(Genome genome)
         {
+            if (genome.Sequence.Count == 0)
+                throw new Exception("Cannot determine fitness of an empty genome.");
+            
             int fitness = 0;
             
             //fitness goes up by one if the colours are different 
@@ -102,6 +128,7 @@ namespace Automatic_Color_Filler
             return null;
         }
 
+        
         public static Tuple<Genome, Genome> Single_Point_Crossover(Genome a, Genome b)
         {
             int point = RNG.Next(1, a.Sequence.Count - 1);
@@ -113,6 +140,11 @@ namespace Automatic_Color_Filler
             return new Tuple<Genome, Genome>(a, b);
         }
 
+        /// <summary>
+        /// Changes one random bit on a Genome.
+        /// </summary>
+        /// <param name="genome">A non-empty Genome</param>
+        /// <returns>A randomly mutated Genome.</returns>
         public static Genome Mutation(Genome genome)
         {
             int random_index = RNG.Next(genome.Sequence.Count);
