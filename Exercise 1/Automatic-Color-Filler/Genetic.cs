@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Automatic_Color_Filler
 {
@@ -123,12 +124,23 @@ namespace Automatic_Color_Filler
             return fitness;
         }
 
-        public static Population Selection_Pair()
+        public static Population Selection_Pair(Population population)
         {
-            return null;
+            switch (population.Genomes.Count)
+            {
+                case 0:
+                    throw new Exception("Cannot select pairs from an empty population.");
+                case 1:
+                    throw new Exception("Pairs have to be selected from a population with at least 2 genomes.");
+                default:
+                {
+                    //σε αυτό το σημείο απλά παραδίνομαι στο Rider.
+                    var maxFitness = population.Genomes.OrderByDescending(Fitness).ToList();
+                    return new Population(new List<Genome>{maxFitness[0], maxFitness[1]});
+                }
+            }
         }
 
-        
         public static Tuple<Genome, Genome> Single_Point_Crossover(Genome a, Genome b)
         {
             int point = RNG.Next(1, a.Sequence.Count - 1);

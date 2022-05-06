@@ -19,11 +19,13 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            var genome = Genetic.Generate_Genome();
+            var length = 15;
+            var population = Genetic.Generate_Population(length);
+            var max_fitness = (from genome in population.Genomes select Genetic.Fitness(genome)).Max();
+            var fittest_genome = (from genome in population.Genomes where Genetic.Fitness(genome) == max_fitness select genome).First();
 
-            labelFitness.Text = $@"Fitness: {Genetic.Fitness(genome)}";
-            labelGenome.Size = new Size(99999, 99);
-            labelGenome.Text = $"Genome: {string.Join("", genome.Sequence)},\nBoutsa: {string.Join("", Genetic.Mutation(genome).Sequence)}";
+            labelFitness.Text = $@"Fitness: {Genetic.Fitness(fittest_genome)}";
+            labelGenome.Text = $@"Fittest genome from {length} total genomes is: {string.Join("", fittest_genome.Sequence)}";
         }
     }
 }

@@ -9,6 +9,11 @@ namespace Automatic_Color_Filler
             Genomes = new List<Genome>();
         }
 
+        public Population(List<Genome> Genomes)
+        {
+            this.Genomes = Genomes;
+        }
+
         public List<Genome> Genomes;
     }
 }
