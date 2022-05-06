@@ -124,6 +124,14 @@ namespace Automatic_Color_Filler
             return fitness;
         }
 
+
+
+
+
+
+
+
+
         public static Population Selection_Pair(Population population)
         {
             switch (population.Genomes.Count)
