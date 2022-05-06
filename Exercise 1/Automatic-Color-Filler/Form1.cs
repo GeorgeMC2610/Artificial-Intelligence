@@ -19,15 +19,45 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            var length = 15;
-            var population = Genetic.Generate_Population(length);
-            var max_fitness = (from genome in population.Genomes select Genetic.Fitness(genome)).Max();
-            var fittest_genome = (from genome in population.Genomes where Genetic.Fitness(genome) == max_fitness select genome).First();
+            var (item1, item2) = RunEvolution(2, Genetic.Generate_Population(15));
 
-            labelFitness.Text = $@"Fitness: {Genetic.Fitness(fittest_genome)}";
-            labelGenome.Text = $@"Fittest genome from {length} total genomes is: {string.Join("", fittest_genome.Sequence)}";
+            labelFitness.Text = $@"Sequence of solution: {string.Join("", item1.Sequence)}";
+            labelGenome.Text = $@"Total generations: {item2}";
             
-            ApplyColorToLabels(fittest_genome);
+            ApplyColorToLabels(item1);
+        }
+
+        private Tuple<Genome, int> RunEvolution(int generationLimit, Population population)
+        {
+            int numberOfGenerations = 0;
+            Genome fittestGenome = null;
+            
+            for (int i = 0; i < generationLimit; i++)
+            {
+                population.Genomes = population.Genomes.OrderByDescending(Genetic.Fitness).ToList();
+
+                if (Genetic.Fitness(population.Genomes[0]) == 40)
+                {
+                    fittestGenome = population.Genomes[0];
+                    break;
+                }
+
+                var nextGeneration = new Population(population.Genomes[0], population.Genomes[1]);
+                for (int j = 0; j < population.Genomes.Count/2 - 1; i++)
+                {
+                    var parents = Genetic.Selection_Pair(population);
+                    var offsprings = Genetic.Single_Point_Crossover(parents.Genomes[0], parents.Genomes[1]);
+                    offsprings[0] = Genetic.Mutation(offsprings[0]);
+                    offsprings[1] = Genetic.Mutation(offsprings[1]);
+                    nextGeneration.Genomes.Add(offsprings[1]);
+                    nextGeneration.Genomes.Add(offsprings[0]);  
+                }
+
+                population = nextGeneration;
+                numberOfGenerations++;
+            }
+            
+            return new Tuple<Genome, int>(fittestGenome, numberOfGenerations);
         }
 
         private void ApplyColorToLabels(Genome genome)

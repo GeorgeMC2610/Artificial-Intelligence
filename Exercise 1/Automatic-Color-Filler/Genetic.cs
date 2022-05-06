@@ -123,15 +123,8 @@ namespace Automatic_Color_Filler
             
             return fitness;
         }
-
-
-
-
-
-
-
-
-
+        
+        
         public static Population Selection_Pair(Population population)
         {
             switch (population.Genomes.Count)
@@ -149,7 +142,7 @@ namespace Automatic_Color_Filler
             }
         }
 
-        public static Tuple<Genome, Genome> Single_Point_Crossover(Genome a, Genome b)
+        public static Genome[] Single_Point_Crossover(Genome a, Genome b)
         {
             int point = RNG.Next(1, a.Sequence.Count - 1);
 
@@ -157,7 +150,7 @@ namespace Automatic_Color_Filler
             for (int i = 1; i < point; i++)
                 (a.Sequence[i], b.Sequence[i]) = (b.Sequence[i], a.Sequence[i]);
             
-            return new Tuple<Genome, Genome>(a, b);
+            return new []{a, b};
         }
 
         /// <summary>
