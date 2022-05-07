@@ -64,7 +64,7 @@
             this.buttonGenerateGenome.Name = "buttonGenerateGenome";
             this.buttonGenerateGenome.Size = new System.Drawing.Size(931, 44);
             this.buttonGenerateGenome.TabIndex = 0;
-            this.buttonGenerateGenome.Text = "Apply Random Colors";
+            this.buttonGenerateGenome.Text = "Generate Solution";
             this.buttonGenerateGenome.UseVisualStyleBackColor = true;
             this.buttonGenerateGenome.Click += new System.EventHandler(this.buttonGenerateGenome_Click);
             // 
@@ -75,7 +75,7 @@
             this.labelFitness.Name = "labelFitness";
             this.labelFitness.Size = new System.Drawing.Size(892, 23);
             this.labelFitness.TabIndex = 1;
-            this.labelFitness.Text = "Fitness";
+            this.labelFitness.Text = "Press the button to find the fittest solution.";
             // 
             // labelGenome
             // 
@@ -84,7 +84,6 @@
             this.labelGenome.Name = "labelGenome";
             this.labelGenome.Size = new System.Drawing.Size(892, 23);
             this.labelGenome.TabIndex = 2;
-            this.labelGenome.Text = "Genome";
             // 
             // panel1
             // 

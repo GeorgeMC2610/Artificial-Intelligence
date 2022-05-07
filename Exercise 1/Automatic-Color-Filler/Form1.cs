@@ -19,17 +19,19 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            //Genome g1 = Genetic.Generate_Genome();
-            //Genome g2 = Genetic.Generate_Genome();
+            //Genome g1 = new Genome();
+            // g2 = new Genome();
+            
+            //g1.ConvertStringToSequence("00000000000000000000000000000000");
 
             //var new_population = Genetic.Single_Point_Crossover(g1, g2);
             
             var (item1, item2) = RunEvolution((int)numericUpDownGenLimit.Value, Genetic.Generate_Population((int)numericUpDownStartPop.Value));
 
-            labelFitness.Text = $@"Sequence of solution: {string.Join("", item1.Sequence)}. Fitness: {Genetic.Fitness(item1)}";
+            labelFitness.Text = $@"Sequence of solution: {item1.DisplaySequence()}. Fitness: {Genetic.Fitness(item1)}";
             labelGenome.Text = $@"Total generations: {item2}";
             
-            ApplyColorToLabels(item1);
+            ApplyColors(item1);
         }
 
         private Tuple<Genome, int> RunEvolution(int generationLimit, Population population)
@@ -63,7 +65,7 @@ namespace Automatic_Color_Filler
             return new Tuple<Genome, int>(fittestGenome, numberOfGenerations);
         }
 
-        private void ApplyColorToLabels(Genome genome)
+        private void ApplyColors(Genome genome)
         {
             for (int i = 0; i < 16; i++)
             {
