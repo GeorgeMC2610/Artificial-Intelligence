@@ -172,12 +172,46 @@ namespace Automatic_Color_Filler
         /// <returns>A randomly mutated Genome.</returns>
         public static Genome Mutation(Genome genome)
         {
-            int random_index = RNG.Next(genome.Sequence.Count);
+            if (RNG.Next(0, 10) > 3)
+                return genome;
+            
+            var randomIndex = RNG.Next(genome.Sequence.Count);
 
-            if (RNG.Next(0, 2) == 1) genome.Sequence[random_index] = (genome.Sequence[random_index][0] == '0'? '1' : '0') + genome.Sequence[random_index].Remove(0, 1);
-            else                     genome.Sequence[random_index] =  genome.Sequence[random_index].Substring(1, 1) + (genome.Sequence[random_index][1] == '0'? '1' : '0');
+            if (RNG.Next(0, 2) == 1) genome.Sequence[randomIndex] = (genome.Sequence[randomIndex][0] == '0'? '1' : '0') + genome.Sequence[randomIndex].Remove(0, 1);
+            else                     genome.Sequence[randomIndex] =  genome.Sequence[randomIndex].Substring(1, 1) + (genome.Sequence[randomIndex][1] == '0'? '1' : '0');
             
             return genome;
+        }
+        
+        public static Tuple<Genome, int> RunEvolution(int generationLimit, Population population)
+        {
+            int numberOfGenerations = 0;
+            Genome fittestGenome = null;
+            
+            for (int i = 0; i < generationLimit; i++)
+            {
+                population.Genomes = population.Genomes.OrderByDescending(Fitness).ToList();
+
+                fittestGenome = population.Genomes[0];
+                if (Fitness(population.Genomes[0]) == 42)
+                    break;
+                
+                var nextGeneration = new Population(population.Genomes[0], population.Genomes[1]);
+                for (int j = 0; j < population.Genomes.Count/2 + 1; j++)
+                {
+                    var parents = Selection_Pair(population);
+                    var offsprings = Single_Point_Crossover(parents.Genomes[0], parents.Genomes[1]);
+                    offsprings[0] = Mutation(offsprings[0]);
+                    offsprings[1] = Mutation(offsprings[1]);
+                    nextGeneration.Genomes.Add(offsprings[1]);
+                    nextGeneration.Genomes.Add(offsprings[0]);  
+                }
+
+                population = nextGeneration;
+                numberOfGenerations++;
+            }
+            
+            return new Tuple<Genome, int>(fittestGenome, numberOfGenerations);
         }
     }
 }
