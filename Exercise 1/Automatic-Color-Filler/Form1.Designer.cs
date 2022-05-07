@@ -49,7 +49,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDownStartPop = new System.Windows.Forms.NumericUpDown();
+            this.labelStartingPopulation = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.numericUpDownGenLimit = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownGenLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGenerateGenome
@@ -100,7 +106,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(239, 71);
+            this.panel1.Location = new System.Drawing.Point(242, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(503, 383);
             this.panel1.TabIndex = 3;
@@ -265,12 +271,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "1";
             // 
+            // numericUpDownStartPop
+            // 
+            this.numericUpDownStartPop.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.numericUpDownStartPop.Location = new System.Drawing.Point(207, 473);
+            this.numericUpDownStartPop.Name = "numericUpDownStartPop";
+            this.numericUpDownStartPop.Size = new System.Drawing.Size(54, 26);
+            this.numericUpDownStartPop.TabIndex = 4;
+            this.numericUpDownStartPop.Value = new decimal(new int[] {15, 0, 0, 0});
+            // 
+            // labelStartingPopulation
+            // 
+            this.labelStartingPopulation.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelStartingPopulation.Location = new System.Drawing.Point(12, 475);
+            this.labelStartingPopulation.Name = "labelStartingPopulation";
+            this.labelStartingPopulation.Size = new System.Drawing.Size(189, 23);
+            this.labelStartingPopulation.TabIndex = 5;
+            this.labelStartingPopulation.Text = "Starting Population:";
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label17.Location = new System.Drawing.Point(12, 441);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(189, 23);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Generation Limit:";
+            // 
+            // numericUpDownGenLimit
+            // 
+            this.numericUpDownGenLimit.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.numericUpDownGenLimit.Location = new System.Drawing.Point(176, 438);
+            this.numericUpDownGenLimit.Maximum = new decimal(new int[] {250, 0, 0, 0});
+            this.numericUpDownGenLimit.Name = "numericUpDownGenLimit";
+            this.numericUpDownGenLimit.Size = new System.Drawing.Size(57, 26);
+            this.numericUpDownGenLimit.TabIndex = 7;
+            this.numericUpDownGenLimit.Value = new decimal(new int[] {50, 0, 0, 0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(955, 557);
+            this.Controls.Add(this.numericUpDownGenLimit);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.labelStartingPopulation);
+            this.Controls.Add(this.numericUpDownStartPop);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelGenome);
             this.Controls.Add(this.labelFitness);
@@ -278,8 +325,17 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownGenLimit)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown numericUpDownGenLimit;
+
+        private System.Windows.Forms.Label labelStartingPopulation;
+
+        private System.Windows.Forms.NumericUpDown numericUpDownStartPop;
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

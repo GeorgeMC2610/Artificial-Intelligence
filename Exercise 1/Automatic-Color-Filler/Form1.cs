@@ -24,9 +24,9 @@ namespace Automatic_Color_Filler
 
             //var new_population = Genetic.Single_Point_Crossover(g1, g2);
             
-            var (item1, item2) = RunEvolution(2, Genetic.Generate_Population(15));
+            var (item1, item2) = RunEvolution((int)numericUpDownGenLimit.Value, Genetic.Generate_Population((int)numericUpDownStartPop.Value));
 
-            labelFitness.Text = $@"Sequence of solution: {string.Join("", item1.Sequence)}";
+            labelFitness.Text = $@"Sequence of solution: {string.Join("", item1.Sequence)}. Fitness: {Genetic.Fitness(item1)}";
             labelGenome.Text = $@"Total generations: {item2}";
             
             ApplyColorToLabels(item1);
@@ -41,12 +41,10 @@ namespace Automatic_Color_Filler
             {
                 population.Genomes = population.Genomes.OrderByDescending(Genetic.Fitness).ToList();
 
+                fittestGenome = population.Genomes[0];
                 if (Genetic.Fitness(population.Genomes[0]) == 42)
-                {
-                    fittestGenome = population.Genomes[0];
                     break;
-                }
-
+                
                 var nextGeneration = new Population(population.Genomes[0], population.Genomes[1]);
                 for (int j = 0; j < population.Genomes.Count/2; j++)
                 {
