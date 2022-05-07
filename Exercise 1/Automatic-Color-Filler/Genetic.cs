@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Automatic_Color_Filler
@@ -137,20 +138,31 @@ namespace Automatic_Color_Filler
                 {
                     //σε αυτό το σημείο απλά παραδίνομαι στο Rider.
                     var maxFitness = population.Genomes.OrderByDescending(Fitness).ToList();
-                    return new Population(new List<Genome>{maxFitness[0], maxFitness[1]});
+                    return new Population(maxFitness[0], maxFitness[1]);
                 }
             }
         }
 
         public static Genome[] Single_Point_Crossover(Genome a, Genome b)
         {
-            int point = RNG.Next(1, a.Sequence.Count - 1);
+            int point = RNG.Next(1, 15);
 
-            //ΓΙΝΕΤΑΙ ΑΥΤΟ;!!
-            for (int i = 1; i < point; i++)
-                (a.Sequence[i], b.Sequence[i]) = (b.Sequence[i], a.Sequence[i]);
-            
-            return new []{a, b};
+            var a_ = new Genome();
+            var b_ = new Genome();
+
+            for (int i = 0; i < point; i++)
+            {
+                a_.Sequence.Add(a.Sequence[i]);
+                b_.Sequence.Add(b.Sequence[i]);
+            }
+
+            for (int i = point; i < 16; i++)
+            {
+                a_.Sequence.Add(b.Sequence[i]);
+                b_.Sequence.Add(a.Sequence[i]);
+            }
+
+            return new []{a_, b_};
         }
 
         /// <summary>

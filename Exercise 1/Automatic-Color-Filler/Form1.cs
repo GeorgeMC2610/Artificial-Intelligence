@@ -19,12 +19,17 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            var (item1, item2) = RunEvolution(2, Genetic.Generate_Population(15));
+            Genome g1 = Genetic.Generate_Genome();
+            Genome g2 = Genetic.Generate_Genome();
 
-            labelFitness.Text = $@"Sequence of solution: {string.Join("", item1.Sequence)}";
-            labelGenome.Text = $@"Total generations: {item2}";
+            var new_population = Genetic.Single_Point_Crossover(g1, g2);
             
-            ApplyColorToLabels(item1);
+            //var (item1, item2) = RunEvolution(2, Genetic.Generate_Population(15));
+
+            labelFitness.Text = $@"Starting solutions: {string.Join("", g1.Sequence)}, {string.Join("", g2.Sequence)}";
+            labelGenome.Text  = $@"Final___ solutions: {string.Join("", new_population[0].Sequence)}, {string.Join("", new_population[1].Sequence)}";
+            
+            //ApplyColorToLabels(item1);
         }
 
         private Tuple<Genome, int> RunEvolution(int generationLimit, Population population)
@@ -36,7 +41,7 @@ namespace Automatic_Color_Filler
             {
                 population.Genomes = population.Genomes.OrderByDescending(Genetic.Fitness).ToList();
 
-                if (Genetic.Fitness(population.Genomes[0]) == 40)
+                if (Genetic.Fitness(population.Genomes[0]) == 42)
                 {
                     fittestGenome = population.Genomes[0];
                     break;
