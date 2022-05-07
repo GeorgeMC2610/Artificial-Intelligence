@@ -19,17 +19,17 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            Genome g1 = Genetic.Generate_Genome();
-            Genome g2 = Genetic.Generate_Genome();
+            //Genome g1 = Genetic.Generate_Genome();
+            //Genome g2 = Genetic.Generate_Genome();
 
-            var new_population = Genetic.Single_Point_Crossover(g1, g2);
+            //var new_population = Genetic.Single_Point_Crossover(g1, g2);
             
-            //var (item1, item2) = RunEvolution(2, Genetic.Generate_Population(15));
+            var (item1, item2) = RunEvolution(2, Genetic.Generate_Population(15));
 
-            labelFitness.Text = $@"Starting solutions: {string.Join("", g1.Sequence)}, {string.Join("", g2.Sequence)}";
-            labelGenome.Text  = $@"Final___ solutions: {string.Join("", new_population[0].Sequence)}, {string.Join("", new_population[1].Sequence)}";
+            labelFitness.Text = $@"Sequence of solution: {string.Join("", item1.Sequence)}";
+            labelGenome.Text = $@"Total generations: {item2}";
             
-            //ApplyColorToLabels(item1);
+            ApplyColorToLabels(item1);
         }
 
         private Tuple<Genome, int> RunEvolution(int generationLimit, Population population)
@@ -48,7 +48,7 @@ namespace Automatic_Color_Filler
                 }
 
                 var nextGeneration = new Population(population.Genomes[0], population.Genomes[1]);
-                for (int j = 0; j < population.Genomes.Count/2 - 1; i++)
+                for (int j = 0; j < population.Genomes.Count/2; j++)
                 {
                     var parents = Genetic.Selection_Pair(population);
                     var offsprings = Genetic.Single_Point_Crossover(parents.Genomes[0], parents.Genomes[1]);
