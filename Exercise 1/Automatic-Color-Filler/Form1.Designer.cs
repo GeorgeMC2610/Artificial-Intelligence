@@ -318,7 +318,8 @@
             // 
             this.numericUpDownInterval.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.numericUpDownInterval.Location = new System.Drawing.Point(12, 278);
-            this.numericUpDownInterval.Maximum = new decimal(new int[] {1000, 0, 0, 0});
+            this.numericUpDownInterval.Maximum = new decimal(new int[] {10000, 0, 0, 0});
+            this.numericUpDownInterval.Minimum = new decimal(new int[] {20, 0, 0, 0});
             this.numericUpDownInterval.Name = "numericUpDownInterval";
             this.numericUpDownInterval.Size = new System.Drawing.Size(99, 26);
             this.numericUpDownInterval.TabIndex = 7;
@@ -396,7 +397,7 @@
             this.Controls.Add(this.buttonGenerateGenome);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Constraint Satisfaction Problem Solver";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer1)).EndInit();

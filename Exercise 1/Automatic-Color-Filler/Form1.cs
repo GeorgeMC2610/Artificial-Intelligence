@@ -21,16 +21,16 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
+            timer1.Enabled = !timer1.Enabled;
+            buttonCustomGenome.Enabled = numericUpDownInterval.Enabled = numericUpDownStartPop.Enabled = !timer1.Enabled;
+            
             Genetic.Population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
+            Genetic.FittestGenome = null;
             Genetic.NumberOfGenerations = 0;
             Genetic.FitnessCounter.Clear();
             
-            timer1.Enabled = !timer1.Enabled;
-            buttonCustomGenome.Enabled = numericUpDownInterval.Enabled = numericUpDownStartPop.Enabled = !timer1.Enabled;
-
             buttonGenerateGenome.BackColor = timer1.Enabled ? Color.LightCoral : Color.DeepSkyBlue;
             buttonGenerateGenome.Text = timer1.Enabled ? "Stop Evolution" : "Start Over";
-
         }
 
         private void ApplyColors(Genome genome)
@@ -73,7 +73,10 @@ namespace Automatic_Color_Filler
             ApplyColors(result.Item1);
 
             if (Genetic.Fitness(result.Item1) == 42)
+            {
                 buttonGenerateGenome.PerformClick();
+                timer1.Enabled = false;
+            }
         }
 
         private void buttonCustomGenome_Click(object sender, EventArgs e)

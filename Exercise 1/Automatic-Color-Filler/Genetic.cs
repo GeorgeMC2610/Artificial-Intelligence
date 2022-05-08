@@ -11,7 +11,7 @@ namespace Automatic_Color_Filler
         private static Random RNG = new Random();
         
         public static int NumberOfGenerations = 0;
-        private static Genome _fittestGenome;
+        public static Genome FittestGenome;
         public static Population Population;
         public static List<int> FitnessCounter = new List<int>();
         
@@ -193,8 +193,8 @@ namespace Automatic_Color_Filler
         {
             Population.Genomes = Population.Genomes.OrderByDescending(Fitness).ToList();
 
-            _fittestGenome = Population.Genomes[0];
-            FitnessCounter.Add(Fitness(_fittestGenome));
+            FittestGenome = Population.Genomes[0];
+            FitnessCounter.Add(Fitness(FittestGenome));
 
             if (FitnessCounter.Count > 15 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 16])
             {
@@ -203,7 +203,7 @@ namespace Automatic_Color_Filler
             }
             
             if (Fitness(Population.Genomes[0]) == 42)
-                return new Tuple<Genome, int>(_fittestGenome, NumberOfGenerations);
+                return new Tuple<Genome, int>(FittestGenome, NumberOfGenerations);
             
             
             var nextGeneration = new Population(Population.Genomes[0], Population.Genomes[1]);
@@ -220,7 +220,7 @@ namespace Automatic_Color_Filler
             Population = nextGeneration;
             NumberOfGenerations++;
 
-            return new Tuple<Genome, int>(_fittestGenome, NumberOfGenerations);
+            return new Tuple<Genome, int>(FittestGenome, NumberOfGenerations);
         }
     }
 }
