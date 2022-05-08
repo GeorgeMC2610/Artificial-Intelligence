@@ -28,7 +28,6 @@ namespace Automatic_Color_Filler
             // 11 is yellow
             Genome genome = new Genome();
             string[] choices = {"00", "01", "10", "11"};
-
             for (int j = 0; j < 16; j++)
                 genome.Sequence.Add(choices[RNG.Next(choices.Length)]);
 
@@ -167,18 +166,20 @@ namespace Automatic_Color_Filler
         }
 
         /// <summary>
-        /// Changes one random bit on a Genome.
+        /// Changes several random bits from a Genome.
         /// </summary>
         /// <param name="genome">A non-empty Genome</param>
         /// <returns>A randomly mutated Genome.</returns>
         public static Genome Mutation(Genome genome)
         {
-            //if (RNG.Next(0, 10) > 3) return genome;
-            
             var randomIndex = RNG.Next(genome.Sequence.Count);
 
-            if (RNG.Next(0, 2) == 1) genome.Sequence[randomIndex] = (genome.Sequence[randomIndex][0] == '0'? '1' : '0') + genome.Sequence[randomIndex].Remove(0, 1);
-            else                     genome.Sequence[randomIndex] =  genome.Sequence[randomIndex].Substring(1, 1) + (genome.Sequence[randomIndex][1] == '0'? '1' : '0');
+            for (int i = 0; i < genome.Sequence.Count; i++)
+            {
+                if (RNG.Next(10) >= 3) continue;
+                if (RNG.Next(0, 2) == 1) genome.Sequence[i] = (genome.Sequence[i][0] == '0'? '1' : '0') + genome.Sequence[i].Remove(0, 1);
+                else                     genome.Sequence[i] =  genome.Sequence[i].Substring(1, 1) + (genome.Sequence[i][1] == '0'? '1' : '0');
+            }
             
             return genome;
         }

@@ -20,6 +20,22 @@ namespace Automatic_Color_Filler
             Genomes = genomes.ToList();
         }
 
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Population);
+        }
+
+        public bool Equals(Population population)
+        {
+            if (population == null)
+                return false;
+
+            if (population.Genomes.Count != Genomes.Count)
+                return false;
+
+            return !population.Genomes.Where((t, i) => !Genomes[i].Equals(t)).Any();
+        }
+
         public List<Genome> Genomes;
     }
 }

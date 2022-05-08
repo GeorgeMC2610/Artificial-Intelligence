@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace Automatic_Color_Filler
         private static Genome FittestGenome;
         private static Population _population;
         private bool EnableTimer = false;
+        private List<int> FitnessCounter = new List<int>();
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
@@ -38,6 +40,8 @@ namespace Automatic_Color_Filler
             //labelGenome.Text = $@"Total generations: {item2}";
 
             _population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
+            NumberOfGenerations = 0;
+            FitnessCounter.Clear();
             timer1.Enabled = !timer1.Enabled;
         }
 
@@ -77,12 +81,25 @@ namespace Automatic_Color_Filler
             _population.Genomes = _population.Genomes.OrderByDescending(Genetic.Fitness).ToList();
 
             FittestGenome = _population.Genomes[0];
+            FitnessCounter.Add(Genetic.Fitness(FittestGenome));
+
+            if (FitnessCounter.Count > 15 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 16])
+            {
+                labelGenome.ForeColor = Color.Brown;
+                _population.Genomes.ForEach(o => Genetic.Mutation(o));
+            }
+            
             if (Genetic.Fitness(_population.Genomes[0]) == 42)
             {
                 timer1.Enabled = false;
+                
+                labelFitness.Text = $@"Sequence of solution: {FittestGenome.DisplaySequence()}. Fitness: {Genetic.Fitness(FittestGenome)}";
+                labelGenome.Text = $@"Generation: {NumberOfGenerations}";
+                ApplyColors(FittestGenome);
+                
                 return;
             }
-                
+            
             var nextGeneration = new Population(_population.Genomes[0], _population.Genomes[1]);
             for (int j = 0; j < _population.Genomes.Count/2 + 1; j++)
             {
@@ -93,13 +110,28 @@ namespace Automatic_Color_Filler
                 nextGeneration.Genomes.Add(offsprings[1]);
                 nextGeneration.Genomes.Add(offsprings[0]);  
             }
-                
+
             _population = nextGeneration;
             NumberOfGenerations++;
             
             labelFitness.Text = $@"Sequence of solution: {FittestGenome.DisplaySequence()}. Fitness: {Genetic.Fitness(FittestGenome)}";
             labelGenome.Text = $@"Generation: {NumberOfGenerations}";
             ApplyColors(FittestGenome);
+        }
+
+        private void buttonCustomGenome_Click(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(textBoxCustomGenome.Text, "[01]{32}"))
+            {
+                MessageBox.Show(@"There must be exactly 32 zeros and/or ones in a genome.", @"Wrong Sequence", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+                
+            Genome g1 = new Genome();
+            g1.ConvertStringToSequence(textBoxCustomGenome.Text);
+            labelFitness.Text = $@"Sequence of solution: {g1.DisplaySequence()}. Fitness: {Genetic.Fitness(g1)}";
+            labelGenome.Text = $@"Custom Genome.";
+            ApplyColors(g1);
         }
     }
 }

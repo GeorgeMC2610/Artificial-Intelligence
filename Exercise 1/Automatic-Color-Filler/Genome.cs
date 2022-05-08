@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Automatic_Color_Filler
@@ -21,7 +22,7 @@ namespace Automatic_Color_Filler
             Sequence.Clear();
             
             var newSequence = new List<string>();
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < 32; i+=2)
                 newSequence.Add(string.Concat(sequence[i], sequence[i + 1]));
 
             Sequence = newSequence;
@@ -30,6 +31,17 @@ namespace Automatic_Color_Filler
         public string DisplaySequence()
         {
             return string.Join("", Sequence);
+        }
+
+        public bool Equals(Genome genome)
+        {
+            if (genome == null)
+                return false;
+
+            if (genome.Sequence.Count != Sequence.Count)
+                return false;
+
+            return !genome.Sequence.Where((t, i) => Sequence[i] != t).Any();
         }
     }
 }
