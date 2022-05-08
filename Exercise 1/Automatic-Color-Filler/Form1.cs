@@ -66,17 +66,15 @@ namespace Automatic_Color_Filler
 
         private void timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
-            var result = Genetic.RunEvolution();
+            var (genome, generation, fitness) = Genetic.RunEvolution();
             
-            labelFitness.Text = $@"Sequence of solution: {result.Item1.DisplaySequence()}. Fitness: {Genetic.Fitness(result.Item1)}";
-            labelGenome.Text = $@"Generation: {result.Item2}";
-            ApplyColors(result.Item1);
+            labelFitness.Text = $@"Sequence of solution: {genome.DisplaySequence()}. Fitness: {fitness}";
+            labelGenome.Text = $@"Generation: {generation}";
+            ApplyColors(genome);
 
-            if (Genetic.Fitness(result.Item1) == 42)
-            {
-                buttonGenerateGenome.PerformClick();
-                timer1.Enabled = false;
-            }
+            if (fitness < 42) return;
+            buttonGenerateGenome.PerformClick();
+            timer1.Enabled = false;
         }
 
         private void buttonCustomGenome_Click(object sender, EventArgs e)
@@ -90,7 +88,7 @@ namespace Automatic_Color_Filler
             Genome g1 = new Genome();
             g1.ConvertStringToSequence(textBoxCustomGenome.Text);
             labelFitness.Text = $@"Sequence of solution: {g1.DisplaySequence()}. Fitness: {Genetic.Fitness(g1)}";
-            labelGenome.Text = $@"Custom Genome.";
+            labelGenome.Text = @"(Custom Genome)";
             ApplyColors(g1);
         }
 

@@ -170,57 +170,62 @@ namespace Automatic_Color_Filler
             return new []{a_, b_};
         }
 
-        /// <summary>
-        /// Changes several random bits from a Genome.
-        /// </summary>
-        /// <param name="genome">A non-empty Genome</param>
-        /// <returns>A randomly mutated Genome.</returns>
-        public static Genome Mutation(Genome genome)
+        
+        public static Genome Mutation(Genome genome, bool entireSequence, int chance)
         {
-            var randomIndex = RNG.Next(genome.Sequence.Count);
-
-            for (int i = 0; i < genome.Sequence.Count; i++)
+            if (entireSequence)
             {
-                if (RNG.Next(10) >= 3) continue;
-                if (RNG.Next(0, 2) == 1) genome.Sequence[i] = (genome.Sequence[i][0] == '0'? '1' : '0') + genome.Sequence[i].Remove(0, 1);
-                else                     genome.Sequence[i] =  genome.Sequence[i].Substring(1, 1) + (genome.Sequence[i][1] == '0'? '1' : '0');
+                for (int i = 0; i < genome.Sequence.Count; i++)
+                {
+                    if (RNG.Next(100) >= chance) continue;
+                    if (RNG.Next(0, 2) == 1) genome.Sequence[i] = (genome.Sequence[i][0] == '0'? '1' : '0') + genome.Sequence[i].Remove(0, 1);
+                    else                     genome.Sequence[i] =  genome.Sequence[i].Substring(1, 1) + (genome.Sequence[i][1] == '0'? '1' : '0');
+                }
             }
+            else
+            {
+                var randomIndex = RNG.Next(genome.Sequence.Count);
+                if (RNG.Next(100) >= chance)
+                    return genome;
+                
+                if (RNG.Next(0, 2) == 1) genome.Sequence[randomIndex] = (genome.Sequence[randomIndex][0] == '0'? '1' : '0') + genome.Sequence[randomIndex].Remove(0, 1);
+                else                     genome.Sequence[randomIndex] =  genome.Sequence[randomIndex].Substring(1, 1) + (genome.Sequence[randomIndex][1] == '0'? '1' : '0');
+            }     
             
             return genome;
         }
         
-        public static Tuple<Genome, int> RunEvolution()
+        public static Tuple<Genome, int, int> RunEvolution()
         {
             Population.Genomes = Population.Genomes.OrderByDescending(Fitness).ToList();
 
             FittestGenome = Population.Genomes[0];
             FitnessCounter.Add(Fitness(FittestGenome));
 
+            if (Fitness(Population.Genomes[0]) == 42)
+                return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, FitnessCounter.Last());
+            
             if (FitnessCounter.Count > 15 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 16])
             {
-                Population.Genomes.ForEach(o => Mutation(o));
+                Population.Genomes.ForEach(o => Mutation(o, false, 100));
                 FitnessCounter.Clear();
             }
-            
-            if (Fitness(Population.Genomes[0]) == 42)
-                return new Tuple<Genome, int>(FittestGenome, NumberOfGenerations);
-            
             
             var nextGeneration = new Population(Population.Genomes[0], Population.Genomes[1]);
             for (int j = 0; j < Population.Genomes.Count/2 + 1; j++)
             {
                 var parents = Selection_Pair(Population);
                 var offsprings = Single_Point_Crossover(parents.Genomes[0], parents.Genomes[1]);
-                offsprings[0] = Mutation(offsprings[0]);
-                offsprings[1] = Mutation(offsprings[1]);
+                offsprings[0] = Mutation(offsprings[0], true, 30);
+                offsprings[1] = Mutation(offsprings[1], true, 30);
                 nextGeneration.Genomes.Add(offsprings[1]);
                 nextGeneration.Genomes.Add(offsprings[0]);  
             }
-
+            
             Population = nextGeneration;
             NumberOfGenerations++;
 
-            return new Tuple<Genome, int>(FittestGenome, NumberOfGenerations);
+            return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, Fitness(FittestGenome));
         }
     }
 }

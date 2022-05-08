@@ -73,7 +73,7 @@
             this.buttonGenerateGenome.Location = new System.Drawing.Point(12, 501);
             this.buttonGenerateGenome.Name = "buttonGenerateGenome";
             this.buttonGenerateGenome.Size = new System.Drawing.Size(931, 44);
-            this.buttonGenerateGenome.TabIndex = 0;
+            this.buttonGenerateGenome.TabIndex = 5;
             this.buttonGenerateGenome.Text = "Start Finding Solutions";
             this.buttonGenerateGenome.UseVisualStyleBackColor = false;
             this.buttonGenerateGenome.Click += new System.EventHandler(this.buttonGenerateGenome_Click);
@@ -287,8 +287,8 @@
             this.numericUpDownStartPop.Maximum = new decimal(new int[] {1000, 0, 0, 0});
             this.numericUpDownStartPop.Name = "numericUpDownStartPop";
             this.numericUpDownStartPop.Size = new System.Drawing.Size(54, 26);
-            this.numericUpDownStartPop.TabIndex = 4;
-            this.numericUpDownStartPop.Value = new decimal(new int[] {4, 0, 0, 0});
+            this.numericUpDownStartPop.TabIndex = 2;
+            this.numericUpDownStartPop.Value = new decimal(new int[] {15, 0, 0, 0});
             // 
             // labelStartingPopulation
             // 
@@ -322,7 +322,7 @@
             this.numericUpDownInterval.Minimum = new decimal(new int[] {20, 0, 0, 0});
             this.numericUpDownInterval.Name = "numericUpDownInterval";
             this.numericUpDownInterval.Size = new System.Drawing.Size(99, 26);
-            this.numericUpDownInterval.TabIndex = 7;
+            this.numericUpDownInterval.TabIndex = 1;
             this.numericUpDownInterval.Value = new decimal(new int[] {500, 0, 0, 0});
             this.numericUpDownInterval.ValueChanged += new System.EventHandler(this.numericUpDownInterval_ValueChanged);
             // 
@@ -351,7 +351,7 @@
             this.textBoxCustomGenome.MaxLength = 32;
             this.textBoxCustomGenome.Name = "textBoxCustomGenome";
             this.textBoxCustomGenome.Size = new System.Drawing.Size(356, 25);
-            this.textBoxCustomGenome.TabIndex = 10;
+            this.textBoxCustomGenome.TabIndex = 3;
             // 
             // buttonCustomGenome
             // 
@@ -361,7 +361,7 @@
             this.buttonCustomGenome.Location = new System.Drawing.Point(374, 461);
             this.buttonCustomGenome.Name = "buttonCustomGenome";
             this.buttonCustomGenome.Size = new System.Drawing.Size(126, 25);
-            this.buttonCustomGenome.TabIndex = 11;
+            this.buttonCustomGenome.TabIndex = 4;
             this.buttonCustomGenome.Text = "Calculate Fitness";
             this.buttonCustomGenome.UseVisualStyleBackColor = false;
             this.buttonCustomGenome.Click += new System.EventHandler(this.buttonCustomGenome_Click);
