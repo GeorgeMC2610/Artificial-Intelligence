@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace Automatic_Color_Filler
@@ -17,6 +18,11 @@ namespace Automatic_Color_Filler
             InitializeComponent();
         }
 
+        private static int NumberOfGenerations = 0;
+        private static Genome FittestGenome;
+        private static Population _population;
+        private bool EnableTimer = false;
+
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
             //Genome g1 = new Genome();
@@ -26,12 +32,13 @@ namespace Automatic_Color_Filler
 
             //var new_population = Genetic.Single_Point_Crossover(g1, g2);
             
-            var (item1, item2) = Genetic.RunEvolution((int)numericUpDownGenLimit.Value, Genetic.Generate_Population((int)numericUpDownStartPop.Value));
+            //var (item1, item2) = Genetic.RunEvolution(int.MaxValue, Genetic.Generate_Population((int)numericUpDownStartPop.Value));
 
-            labelFitness.Text = $@"Sequence of solution: {item1.DisplaySequence()}. Fitness: {Genetic.Fitness(item1)}";
-            labelGenome.Text = $@"Total generations: {item2}";
-            
-            ApplyColors(item1);
+            //labelFitness.Text = $@"Sequence of solution: {item1.DisplaySequence()}. Fitness: {Genetic.Fitness(Genetic.FittestGenome)}";
+            //labelGenome.Text = $@"Total generations: {item2}";
+
+            _population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
+            timer1.Enabled = !timer1.Enabled;
         }
 
         private void ApplyColors(Genome genome)
@@ -63,6 +70,36 @@ namespace Automatic_Color_Filler
                 return null;
             
             return control.First();
+        }
+
+        private void timer1_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            _population.Genomes = _population.Genomes.OrderByDescending(Genetic.Fitness).ToList();
+
+            FittestGenome = _population.Genomes[0];
+            if (Genetic.Fitness(_population.Genomes[0]) == 42)
+            {
+                timer1.Enabled = false;
+                return;
+            }
+                
+            var nextGeneration = new Population(_population.Genomes[0], _population.Genomes[1]);
+            for (int j = 0; j < _population.Genomes.Count/2 + 1; j++)
+            {
+                var parents = Genetic.Selection_Pair(_population);
+                var offsprings = Genetic.Single_Point_Crossover(parents.Genomes[0], parents.Genomes[1]);
+                offsprings[0] = Genetic.Mutation(offsprings[0]);
+                offsprings[1] = Genetic.Mutation(offsprings[1]);
+                nextGeneration.Genomes.Add(offsprings[1]);
+                nextGeneration.Genomes.Add(offsprings[0]);  
+            }
+                
+            _population = nextGeneration;
+            NumberOfGenerations++;
+            
+            labelFitness.Text = $@"Sequence of solution: {FittestGenome.DisplaySequence()}. Fitness: {Genetic.Fitness(FittestGenome)}";
+            labelGenome.Text = $@"Generation: {NumberOfGenerations}";
+            ApplyColors(FittestGenome);
         }
     }
 }

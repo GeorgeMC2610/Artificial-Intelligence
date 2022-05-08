@@ -8,6 +8,7 @@ namespace Automatic_Color_Filler
     public static class Genetic
     {
         public static Random RNG = new Random();
+        public static Genome FittestGenome;
         
         /// <summary>
         /// <b>Generates a <see cref="Genome"/> with a random sequence of colours.</b>
@@ -172,8 +173,7 @@ namespace Automatic_Color_Filler
         /// <returns>A randomly mutated Genome.</returns>
         public static Genome Mutation(Genome genome)
         {
-            if (RNG.Next(0, 10) > 3)
-                return genome;
+            //if (RNG.Next(0, 10) > 3) return genome;
             
             var randomIndex = RNG.Next(genome.Sequence.Count);
 
@@ -186,13 +186,14 @@ namespace Automatic_Color_Filler
         public static Tuple<Genome, int> RunEvolution(int generationLimit, Population population)
         {
             int numberOfGenerations = 0;
-            Genome fittestGenome = null;
-            
+
             for (int i = 0; i < generationLimit; i++)
             {
                 population.Genomes = population.Genomes.OrderByDescending(Fitness).ToList();
 
-                fittestGenome = population.Genomes[0];
+                
+                
+                FittestGenome = population.Genomes[0];
                 if (Fitness(population.Genomes[0]) == 42)
                     break;
                 
@@ -206,12 +207,12 @@ namespace Automatic_Color_Filler
                     nextGeneration.Genomes.Add(offsprings[1]);
                     nextGeneration.Genomes.Add(offsprings[0]);  
                 }
-
+                
                 population = nextGeneration;
                 numberOfGenerations++;
             }
             
-            return new Tuple<Genome, int>(fittestGenome, numberOfGenerations);
+            return new Tuple<Genome, int>(FittestGenome, numberOfGenerations);
         }
     }
 }
