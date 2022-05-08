@@ -19,30 +19,18 @@ namespace Automatic_Color_Filler
             InitializeComponent();
         }
 
-        private static int NumberOfGenerations = 0;
-        private static Genome FittestGenome;
-        private static Population _population;
-        private bool EnableTimer = false;
-        private List<int> FitnessCounter = new List<int>();
-
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            //Genome g1 = new Genome();
-            // g2 = new Genome();
+            Genetic.Population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
+            Genetic.NumberOfGenerations = 0;
+            Genetic.FitnessCounter.Clear();
             
-            //g1.ConvertStringToSequence("00000000000000000000000000000000");
-
-            //var new_population = Genetic.Single_Point_Crossover(g1, g2);
-            
-            //var (item1, item2) = Genetic.RunEvolution(int.MaxValue, Genetic.Generate_Population((int)numericUpDownStartPop.Value));
-
-            //labelFitness.Text = $@"Sequence of solution: {item1.DisplaySequence()}. Fitness: {Genetic.Fitness(Genetic.FittestGenome)}";
-            //labelGenome.Text = $@"Total generations: {item2}";
-
-            _population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
-            NumberOfGenerations = 0;
-            FitnessCounter.Clear();
             timer1.Enabled = !timer1.Enabled;
+            buttonCustomGenome.Enabled = numericUpDownInterval.Enabled = numericUpDownStartPop.Enabled = !timer1.Enabled;
+
+            buttonGenerateGenome.BackColor = timer1.Enabled ? Color.LightCoral : Color.DeepSkyBlue;
+            buttonGenerateGenome.Text = timer1.Enabled ? "Stop Evolution" : "Start Over";
+
         }
 
         private void ApplyColors(Genome genome)
@@ -78,45 +66,14 @@ namespace Automatic_Color_Filler
 
         private void timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
-            _population.Genomes = _population.Genomes.OrderByDescending(Genetic.Fitness).ToList();
-
-            FittestGenome = _population.Genomes[0];
-            FitnessCounter.Add(Genetic.Fitness(FittestGenome));
-
-            if (FitnessCounter.Count > 15 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 16])
-            {
-                labelGenome.ForeColor = Color.Brown;
-                _population.Genomes.ForEach(o => Genetic.Mutation(o));
-            }
+            var result = Genetic.RunEvolution();
             
-            if (Genetic.Fitness(_population.Genomes[0]) == 42)
-            {
-                timer1.Enabled = false;
-                
-                labelFitness.Text = $@"Sequence of solution: {FittestGenome.DisplaySequence()}. Fitness: {Genetic.Fitness(FittestGenome)}";
-                labelGenome.Text = $@"Generation: {NumberOfGenerations}";
-                ApplyColors(FittestGenome);
-                
-                return;
-            }
-            
-            var nextGeneration = new Population(_population.Genomes[0], _population.Genomes[1]);
-            for (int j = 0; j < _population.Genomes.Count/2 + 1; j++)
-            {
-                var parents = Genetic.Selection_Pair(_population);
-                var offsprings = Genetic.Single_Point_Crossover(parents.Genomes[0], parents.Genomes[1]);
-                offsprings[0] = Genetic.Mutation(offsprings[0]);
-                offsprings[1] = Genetic.Mutation(offsprings[1]);
-                nextGeneration.Genomes.Add(offsprings[1]);
-                nextGeneration.Genomes.Add(offsprings[0]);  
-            }
+            labelFitness.Text = $@"Sequence of solution: {result.Item1.DisplaySequence()}. Fitness: {Genetic.Fitness(result.Item1)}";
+            labelGenome.Text = $@"Generation: {result.Item2}";
+            ApplyColors(result.Item1);
 
-            _population = nextGeneration;
-            NumberOfGenerations++;
-            
-            labelFitness.Text = $@"Sequence of solution: {FittestGenome.DisplaySequence()}. Fitness: {Genetic.Fitness(FittestGenome)}";
-            labelGenome.Text = $@"Generation: {NumberOfGenerations}";
-            ApplyColors(FittestGenome);
+            if (Genetic.Fitness(result.Item1) == 42)
+                buttonGenerateGenome.PerformClick();
         }
 
         private void buttonCustomGenome_Click(object sender, EventArgs e)
@@ -132,6 +89,11 @@ namespace Automatic_Color_Filler
             labelFitness.Text = $@"Sequence of solution: {g1.DisplaySequence()}. Fitness: {Genetic.Fitness(g1)}";
             labelGenome.Text = $@"Custom Genome.";
             ApplyColors(g1);
+        }
+
+        private void numericUpDownInterval_ValueChanged(object sender, EventArgs e)
+        {
+            timer1.Interval = (double) numericUpDownInterval.Value;
         }
     }
 }

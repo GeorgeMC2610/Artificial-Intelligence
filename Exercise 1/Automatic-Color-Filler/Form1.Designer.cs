@@ -53,7 +53,7 @@
             this.labelStartingPopulation = new System.Windows.Forms.Label();
             this.timer1 = new System.Timers.Timer();
             this.label17 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownInterval = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxCustomGenome = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownInterval)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGenerateGenome
@@ -288,7 +288,7 @@
             this.numericUpDownStartPop.Name = "numericUpDownStartPop";
             this.numericUpDownStartPop.Size = new System.Drawing.Size(54, 26);
             this.numericUpDownStartPop.TabIndex = 4;
-            this.numericUpDownStartPop.Value = new decimal(new int[] {15, 0, 0, 0});
+            this.numericUpDownStartPop.Value = new decimal(new int[] {4, 0, 0, 0});
             // 
             // labelStartingPopulation
             // 
@@ -301,7 +301,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000D;
+            this.timer1.Interval = 500D;
             this.timer1.SynchronizingObject = this;
             this.timer1.Elapsed += new System.Timers.ElapsedEventHandler(this.timer1_Elapsed);
             // 
@@ -314,15 +314,16 @@
             this.label17.TabIndex = 6;
             this.label17.Text = "Timer Interval:";
             // 
-            // numericUpDown1
+            // numericUpDownInterval
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 278);
-            this.numericUpDown1.Maximum = new decimal(new int[] {1000, 0, 0, 0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(99, 26);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.Value = new decimal(new int[] {15, 0, 0, 0});
+            this.numericUpDownInterval.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.numericUpDownInterval.Location = new System.Drawing.Point(12, 278);
+            this.numericUpDownInterval.Maximum = new decimal(new int[] {1000, 0, 0, 0});
+            this.numericUpDownInterval.Name = "numericUpDownInterval";
+            this.numericUpDownInterval.Size = new System.Drawing.Size(99, 26);
+            this.numericUpDownInterval.TabIndex = 7;
+            this.numericUpDownInterval.Value = new decimal(new int[] {500, 0, 0, 0});
+            this.numericUpDownInterval.ValueChanged += new System.EventHandler(this.numericUpDownInterval_ValueChanged);
             // 
             // label18
             // 
@@ -385,7 +386,7 @@
             this.Controls.Add(this.textBoxCustomGenome);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericUpDownInterval);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.labelStartingPopulation);
             this.Controls.Add(this.numericUpDownStartPop);
@@ -399,7 +400,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownInterval)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -411,7 +412,7 @@
         private System.Windows.Forms.Button buttonCustomGenome;
 
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownInterval;
         private System.Windows.Forms.Label label18;
 
         private System.Timers.Timer timer1;
