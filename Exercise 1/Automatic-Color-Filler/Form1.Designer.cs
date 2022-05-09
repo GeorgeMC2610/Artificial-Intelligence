@@ -160,9 +160,9 @@
             // 
             this.label16_16.BackColor = System.Drawing.Color.Transparent;
             this.label16_16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label16_16.Location = new System.Drawing.Point(367, 325);
+            this.label16_16.Location = new System.Drawing.Point(367, 333);
             this.label16_16.Name = "label16_16";
-            this.label16_16.Size = new System.Drawing.Size(45, 36);
+            this.label16_16.Size = new System.Drawing.Size(32, 25);
             this.label16_16.TabIndex = 36;
             this.label16_16.Text = "16";
             // 
@@ -172,7 +172,7 @@
             this.label15_15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label15_15.Location = new System.Drawing.Point(278, 290);
             this.label15_15.Name = "label15_15";
-            this.label15_15.Size = new System.Drawing.Size(36, 33);
+            this.label15_15.Size = new System.Drawing.Size(36, 23);
             this.label15_15.TabIndex = 35;
             this.label15_15.Text = "15";
             // 
@@ -180,9 +180,9 @@
             // 
             this.label14_14.BackColor = System.Drawing.Color.Transparent;
             this.label14_14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label14_14.Location = new System.Drawing.Point(189, 290);
+            this.label14_14.Location = new System.Drawing.Point(189, 293);
             this.label14_14.Name = "label14_14";
-            this.label14_14.Size = new System.Drawing.Size(31, 33);
+            this.label14_14.Size = new System.Drawing.Size(31, 20);
             this.label14_14.TabIndex = 34;
             this.label14_14.Text = "14";
             // 

@@ -21,11 +21,6 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            foreach (Control c in panel1.Controls)
-                c.Visible = true;
-
-            panel1.BackgroundImage = null;
-            
             if (checkBoxIterateGens.Checked)
             {
                 timer1.Enabled = !timer1.Enabled;
@@ -48,37 +43,9 @@ namespace Automatic_Color_Filler
 
                 var (genome, generation) = Genetic.RunEvolution(0);
                 
-                labelFitness.Text = $@"Sequence of solution: {genome.DisplaySequence()}. Fitness: {Genetic.Fitness(genome)}";
-                labelGenome.Text = $@"Generation: {generation}";
-                ApplyColors(genome);
+                AnalyzeSequences(genome, generation);
             }
             
-        }
-
-        private void ApplyColors(Genome genome)
-        {
-            for (int i = 0; i < 16; i++)
-            {
-                switch (genome.Sequence[i])
-                {
-                    case "00":
-                        GetLabelByName($"label{i + 1}").BackColor = Color.CornflowerBlue;
-                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.CornflowerBlue;
-                        break;
-                    case "01":
-                        GetLabelByName($"label{i + 1}").BackColor = Color.IndianRed;
-                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.IndianRed;
-                        break;
-                    case "10":
-                        GetLabelByName($"label{i + 1}").BackColor = Color.LightGreen;
-                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.LightGreen;
-                        break;
-                    case "11":
-                        GetLabelByName($"label{i + 1}").BackColor = Color.Yellow;
-                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.Yellow;
-                        break;
-                }
-            }
         }
 
         private Label GetLabelByName(string name)
@@ -94,9 +61,7 @@ namespace Automatic_Color_Filler
         {
             var (genome, generation, fitness) = Genetic.RunEvolution();
             
-            labelFitness.Text = $@"Sequence of solution: {genome.DisplaySequence()}. Fitness: {fitness}";
-            labelGenome.Text = $@"Generation: {generation}";
-            ApplyColors(genome);
+            AnalyzeSequences(genome, generation);
 
             if (fitness < 42) return;
             buttonGenerateGenome.PerformClick();
@@ -113,9 +78,7 @@ namespace Automatic_Color_Filler
                 
             Genome g1 = new Genome();
             g1.ConvertStringToSequence(textBoxCustomGenome.Text);
-            labelFitness.Text = $@"Sequence of solution: {g1.DisplaySequence()}. Fitness: {Genetic.Fitness(g1)}";
-            labelGenome.Text = @"(Custom Genome)";
-            ApplyColors(g1);
+            AnalyzeSequences(g1, -1);
         }
 
         private void numericUpDownInterval_ValueChanged(object sender, EventArgs e)
@@ -130,10 +93,35 @@ namespace Automatic_Color_Filler
                 GetLabelByName($"label{i}").Text = "";
                 GetLabelByName($"label{i}").BorderStyle = BorderStyle.FixedSingle;
             }
-                
 
             foreach (Control c in panel1.Controls)
                 c.Visible = false;
+        }
+
+        private void AnalyzeSequences(Genome genome, int generations)
+        {
+            foreach (Control c in panel1.Controls)
+                c.Visible = true;
+
+            panel1.BackgroundImage = null;
+            
+            labelFitness.Text = $@"Sequence of solution: {genome.DisplaySequence()}. Fitness: {Genetic.Fitness(genome)}";
+            labelGenome.Text = generations == -1 ? @"(Custom Genome)" : $@"Generation: {generations}";
+            ApplyColors(genome);
+        }
+        
+        private void ApplyColors(Genome genome)
+        {
+            var colors = new Dictionary<string, Color>()
+            {
+                {"00", Color.CornflowerBlue},
+                {"01", Color.IndianRed},
+                {"10", Color.LightGreen},
+                {"11", Color.Yellow}
+            };
+
+            for (int i = 0; i < 16; i++)
+                GetLabelByName($"label{i + 1}").BackColor = GetLabelByName($"label{i + 1}_{i + 1}").BackColor = colors[genome.Sequence[i]];
         }
     }
 }
