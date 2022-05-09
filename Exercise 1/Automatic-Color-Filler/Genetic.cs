@@ -225,7 +225,11 @@ namespace Automatic_Color_Filler
             Population = nextGeneration;
             NumberOfGenerations++;
 
-            return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, Fitness(FittestGenome));
+            return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, Fitness(FittestGenome
+            
+            
+            
+            ));
         }
     }
 }

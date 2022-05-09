@@ -41,15 +41,19 @@ namespace Automatic_Color_Filler
                 {
                     case "00":
                         GetLabelByName($"label{i + 1}").BackColor = Color.CornflowerBlue;
+                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.CornflowerBlue;
                         break;
                     case "01":
                         GetLabelByName($"label{i + 1}").BackColor = Color.IndianRed;
+                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.IndianRed;
                         break;
                     case "10":
                         GetLabelByName($"label{i + 1}").BackColor = Color.LightGreen;
+                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.LightGreen;
                         break;
                     case "11":
                         GetLabelByName($"label{i + 1}").BackColor = Color.Yellow;
+                        GetLabelByName($"label{i + 1}_{i + 1}").BackColor = Color.Yellow;
                         break;
                 }
             }
@@ -95,6 +99,12 @@ namespace Automatic_Color_Filler
         private void numericUpDownInterval_ValueChanged(object sender, EventArgs e)
         {
             timer1.Interval = (double) numericUpDownInterval.Value;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 16; i++)
+                GetLabelByName($"label{i}").Text = "";
         }
     }
 }
