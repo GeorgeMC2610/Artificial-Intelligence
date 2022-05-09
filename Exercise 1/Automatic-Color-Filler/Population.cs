@@ -32,7 +32,6 @@ namespace Automatic_Color_Filler
 
             if (population.Genomes.Count != Genomes.Count)
                 return false;
-
             return !population.Genomes.Where((t, i) => !Genomes[i].Equals(t)).Any();
         }
 

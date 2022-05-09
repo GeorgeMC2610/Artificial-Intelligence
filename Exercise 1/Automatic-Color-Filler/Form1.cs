@@ -81,13 +81,13 @@ namespace Automatic_Color_Filler
             }
         }
 
-        private Control GetLabelByName(string name)
+        private Label GetLabelByName(string name)
         {
             var control = from label in panel1.Controls.Cast<Control>() where label.Name == name select label;
             if (!control.Any())
                 return null;
             
-            return control.First();
+            return (Label) control.First();
         }
 
         private void timer1_Elapsed(object sender, ElapsedEventArgs e)
@@ -126,7 +126,11 @@ namespace Automatic_Color_Filler
         private void Form1_Load(object sender, EventArgs e)
         {
             for (int i = 1; i <= 16; i++)
+            {
                 GetLabelByName($"label{i}").Text = "";
+                GetLabelByName($"label{i}").BorderStyle = BorderStyle.FixedSingle;
+            }
+                
 
             foreach (Control c in panel1.Controls)
                 c.Visible = false;
