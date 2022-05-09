@@ -157,7 +157,12 @@ namespace Automatic_Color_Filler
             }
         }
 
-        
+        /// <summary>
+        /// Switches several random bits from two Genomes, leading to a better solution.
+        /// </summary>
+        /// <param name="a">First Genome</param>
+        /// <param name="b">Second Genome</param>
+        /// <returns>An array with two Genomes</returns>
         public static Genome[] Single_Point_Crossover(Genome a, Genome b)
         {
             int point = RNG.Next(1, 15);
@@ -181,6 +186,13 @@ namespace Automatic_Color_Filler
         }
 
         
+        /// <summary>
+        /// Flips one random bit or several random bits in a Genome's sequence.
+        /// </summary>
+        /// <param name="genome">The Genome that will be mutated.</param>
+        /// <param name="entireSequence">If this is true, the chance of bit flipping is applied in the entire sequence. If it is false, then only one random bit will be changed.</param>
+        /// <param name="chance">A chance between 0 and 100.</param>
+        /// <returns>A mutated Genome (it can be the same as before).</returns>
         public static Genome Mutation(Genome genome, bool entireSequence, int chance)
         {
             if (entireSequence)
@@ -205,6 +217,10 @@ namespace Automatic_Color_Filler
             return genome;
         }
         
+        /// <summary>
+        /// Runs a single step of evolution. This is typically run on a Timer.
+        /// </summary>
+        /// <returns>The fittest <see cref="Genome"/>, the number of Generations and the Fitness of the fittest Genome.</returns>
         public static Tuple<Genome, int, int> RunEvolution()
         {
             Population.Genomes = Population.Genomes.OrderByDescending(Fitness).ToList();
@@ -238,6 +254,11 @@ namespace Automatic_Color_Filler
             return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, Fitness(FittestGenome));
         }
         
+        /// <summary>
+        /// Runs an entire Evolution to find a solution.
+        /// </summary>
+        /// <param name="limit">The limit of Generations. If this is 0, there will be no limit.</param>
+        /// <returns>The fittest <see cref="Genome"/> and the number of generations it took to get to this Genome.</returns>
         public static Tuple<Genome, int> RunEvolution(int limit)
         {
             if (limit == 0)
