@@ -205,7 +205,7 @@ namespace Automatic_Color_Filler
             if (Fitness(Population.Genomes[0]) == 42)
                 return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, FitnessCounter.Last());
             
-            if (FitnessCounter.Count > 15 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 16])
+            if (FitnessCounter.Count > 8 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 9])
             {
                 Population.Genomes.ForEach(o => Mutation(o, false, 100));
                 FitnessCounter.Clear();
@@ -225,11 +225,46 @@ namespace Automatic_Color_Filler
             Population = nextGeneration;
             NumberOfGenerations++;
 
-            return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, Fitness(FittestGenome
-            
-            
-            
-            ));
+            return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, Fitness(FittestGenome));
+        }
+        
+        public static Tuple<Genome, int> RunEvolution(int limit)
+        {
+            if (limit == 0)
+                limit = int.MaxValue;
+
+            do
+            {
+                Population.Genomes = Population.Genomes.OrderByDescending(Fitness).ToList();
+
+                FittestGenome = Population.Genomes[0];
+                FitnessCounter.Add(Fitness(FittestGenome));
+
+                if (Fitness(Population.Genomes[0]) == 42)
+                    return new Tuple<Genome, int>(FittestGenome, NumberOfGenerations);
+
+                if (FitnessCounter.Count > 8 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 9])
+                {
+                    Population.Genomes.ForEach(o => Mutation(o, false, 100));
+                    FitnessCounter.Clear();
+                }
+
+                var nextGeneration = new Population(Population.Genomes[0], Population.Genomes[1]);
+                for (int j = 0; j < Population.Genomes.Count / 2 + 1; j++)
+                {
+                    var parents = Selection_Pair(Population);
+                    var offsprings = Single_Point_Crossover(parents.Genomes[0], parents.Genomes[1]);
+                    offsprings[0] = Mutation(offsprings[0], true, 30);
+                    offsprings[1] = Mutation(offsprings[1], true, 30);
+                    nextGeneration.Genomes.Add(offsprings[1]);
+                    nextGeneration.Genomes.Add(offsprings[0]);
+                }
+
+                Population = nextGeneration;
+                NumberOfGenerations++;
+            } while (NumberOfGenerations < limit);
+
+            return new Tuple<Genome, int>(FittestGenome, NumberOfGenerations);
         }
     }
 }

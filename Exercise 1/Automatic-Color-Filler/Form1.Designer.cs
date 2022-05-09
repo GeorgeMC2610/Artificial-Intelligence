@@ -75,6 +75,7 @@
             this.textBoxCustomGenome = new System.Windows.Forms.TextBox();
             this.buttonCustomGenome = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
+            this.checkBoxIterateGens = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer1)).BeginInit();
@@ -166,9 +167,9 @@
             // 
             this.label15_15.BackColor = System.Drawing.Color.Transparent;
             this.label15_15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label15_15.Location = new System.Drawing.Point(278, 287);
+            this.label15_15.Location = new System.Drawing.Point(278, 290);
             this.label15_15.Name = "label15_15";
-            this.label15_15.Size = new System.Drawing.Size(45, 36);
+            this.label15_15.Size = new System.Drawing.Size(36, 33);
             this.label15_15.TabIndex = 35;
             this.label15_15.Text = "15";
             // 
@@ -178,7 +179,7 @@
             this.label14_14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label14_14.Location = new System.Drawing.Point(189, 290);
             this.label14_14.Name = "label14_14";
-            this.label14_14.Size = new System.Drawing.Size(45, 36);
+            this.label14_14.Size = new System.Drawing.Size(31, 33);
             this.label14_14.TabIndex = 34;
             this.label14_14.Text = "14";
             // 
@@ -188,7 +189,7 @@
             this.label13_13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label13_13.Location = new System.Drawing.Point(326, 251);
             this.label13_13.Name = "label13_13";
-            this.label13_13.Size = new System.Drawing.Size(45, 36);
+            this.label13_13.Size = new System.Drawing.Size(31, 24);
             this.label13_13.TabIndex = 33;
             this.label13_13.Text = "13";
             // 
@@ -198,7 +199,7 @@
             this.label12_12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label12_12.Location = new System.Drawing.Point(220, 251);
             this.label12_12.Name = "label12_12";
-            this.label12_12.Size = new System.Drawing.Size(45, 36);
+            this.label12_12.Size = new System.Drawing.Size(32, 24);
             this.label12_12.TabIndex = 32;
             this.label12_12.Text = "12";
             // 
@@ -208,7 +209,7 @@
             this.label11_11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label11_11.Location = new System.Drawing.Point(273, 213);
             this.label11_11.Name = "label11_11";
-            this.label11_11.Size = new System.Drawing.Size(45, 36);
+            this.label11_11.Size = new System.Drawing.Size(32, 32);
             this.label11_11.TabIndex = 31;
             this.label11_11.Text = "11";
             // 
@@ -218,7 +219,7 @@
             this.label10_10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label10_10.Location = new System.Drawing.Point(189, 213);
             this.label10_10.Name = "label10_10";
-            this.label10_10.Size = new System.Drawing.Size(45, 36);
+            this.label10_10.Size = new System.Drawing.Size(31, 32);
             this.label10_10.TabIndex = 30;
             this.label10_10.Text = "10";
             // 
@@ -228,7 +229,7 @@
             this.label9_9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label9_9.Location = new System.Drawing.Point(132, 214);
             this.label9_9.Name = "label9_9";
-            this.label9_9.Size = new System.Drawing.Size(32, 36);
+            this.label9_9.Size = new System.Drawing.Size(22, 32);
             this.label9_9.TabIndex = 29;
             this.label9_9.Text = "9";
             // 
@@ -238,7 +239,7 @@
             this.label8_8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label8_8.Location = new System.Drawing.Point(77, 234);
             this.label8_8.Name = "label8_8";
-            this.label8_8.Size = new System.Drawing.Size(32, 36);
+            this.label8_8.Size = new System.Drawing.Size(32, 28);
             this.label8_8.TabIndex = 28;
             this.label8_8.Text = "8";
             // 
@@ -268,7 +269,7 @@
             this.label5_5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label5_5.Location = new System.Drawing.Point(170, 116);
             this.label5_5.Name = "label5_5";
-            this.label5_5.Size = new System.Drawing.Size(32, 36);
+            this.label5_5.Size = new System.Drawing.Size(31, 36);
             this.label5_5.TabIndex = 25;
             this.label5_5.Text = "5";
             // 
@@ -286,9 +287,9 @@
             // 
             this.label3_3.BackColor = System.Drawing.Color.Transparent;
             this.label3_3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label3_3.Location = new System.Drawing.Point(220, 57);
+            this.label3_3.Location = new System.Drawing.Point(220, 63);
             this.label3_3.Name = "label3_3";
-            this.label3_3.Size = new System.Drawing.Size(32, 36);
+            this.label3_3.Size = new System.Drawing.Size(24, 21);
             this.label3_3.TabIndex = 23;
             this.label3_3.Text = "3";
             // 
@@ -306,9 +307,9 @@
             // 
             this.label1_1.BackColor = System.Drawing.Color.Transparent;
             this.label1_1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label1_1.Location = new System.Drawing.Point(240, 17);
+            this.label1_1.Location = new System.Drawing.Point(240, 23);
             this.label1_1.Name = "label1_1";
-            this.label1_1.Size = new System.Drawing.Size(32, 36);
+            this.label1_1.Size = new System.Drawing.Size(21, 24);
             this.label1_1.TabIndex = 21;
             this.label1_1.Text = "1";
             // 
@@ -326,9 +327,9 @@
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label6.Location = new System.Drawing.Point(240, 96);
+            this.label6.Location = new System.Drawing.Point(244, 94);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 96);
+            this.label6.Size = new System.Drawing.Size(89, 95);
             this.label6.TabIndex = 19;
             this.label6.Text = "6";
             // 
@@ -336,9 +337,9 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label5.Location = new System.Drawing.Point(152, 96);
+            this.label5.Location = new System.Drawing.Point(155, 94);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 96);
+            this.label5.Size = new System.Drawing.Size(89, 95);
             this.label5.TabIndex = 18;
             this.label5.Text = "5";
             // 
@@ -436,9 +437,9 @@
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label4.Location = new System.Drawing.Point(278, 53);
+            this.label4.Location = new System.Drawing.Point(281, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 140);
+            this.label4.Size = new System.Drawing.Size(162, 134);
             this.label4.TabIndex = 3;
             this.label4.Text = "4";
             // 
@@ -446,9 +447,9 @@
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label3.Location = new System.Drawing.Point(189, 53);
+            this.label3.Location = new System.Drawing.Point(189, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 43);
+            this.label3.Size = new System.Drawing.Size(90, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "3";
             // 
@@ -456,9 +457,9 @@
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label2.Location = new System.Drawing.Point(24, 53);
+            this.label2.Location = new System.Drawing.Point(27, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(255, 311);
+            this.label2.Size = new System.Drawing.Size(252, 307);
             this.label2.TabIndex = 1;
             this.label2.Text = "2";
             // 
@@ -466,9 +467,9 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label1.Location = new System.Drawing.Point(24, 17);
+            this.label1.Location = new System.Drawing.Point(27, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(455, 305);
+            this.label1.Size = new System.Drawing.Size(451, 306);
             this.label1.TabIndex = 0;
             this.label1.Text = "1";
             // 
@@ -567,6 +568,16 @@
             this.label20.TabIndex = 12;
             this.label20.Text = "Fitness of custom genome";
             // 
+            // checkBoxIterateGens
+            // 
+            this.checkBoxIterateGens.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.checkBoxIterateGens.Location = new System.Drawing.Point(651, 461);
+            this.checkBoxIterateGens.Name = "checkBoxIterateGens";
+            this.checkBoxIterateGens.Size = new System.Drawing.Size(275, 24);
+            this.checkBoxIterateGens.TabIndex = 13;
+            this.checkBoxIterateGens.Text = "Iterate Through Generations";
+            this.checkBoxIterateGens.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,6 +585,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(955, 557);
+            this.Controls.Add(this.checkBoxIterateGens);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.buttonCustomGenome);
             this.Controls.Add(this.textBoxCustomGenome);
@@ -598,6 +610,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.CheckBox checkBoxIterateGens;
 
         private System.Windows.Forms.Label label1_1;
         private System.Windows.Forms.Label label2_2;

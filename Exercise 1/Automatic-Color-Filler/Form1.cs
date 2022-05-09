@@ -21,16 +21,38 @@ namespace Automatic_Color_Filler
 
         private void buttonGenerateGenome_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = !timer1.Enabled;
-            buttonCustomGenome.Enabled = numericUpDownInterval.Enabled = numericUpDownStartPop.Enabled = !timer1.Enabled;
+            foreach (Control c in panel1.Controls)
+                c.Visible = true;
+
+            panel1.BackgroundImage = null;
             
-            Genetic.Population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
-            Genetic.FittestGenome = null;
-            Genetic.NumberOfGenerations = 0;
-            Genetic.FitnessCounter.Clear();
+            if (checkBoxIterateGens.Checked)
+            {
+                timer1.Enabled = !timer1.Enabled;
+                buttonCustomGenome.Enabled = numericUpDownInterval.Enabled = numericUpDownStartPop.Enabled = !timer1.Enabled;
             
-            buttonGenerateGenome.BackColor = timer1.Enabled ? Color.LightCoral : Color.DeepSkyBlue;
-            buttonGenerateGenome.Text = timer1.Enabled ? "Stop Evolution" : "Start Over";
+                Genetic.Population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
+                Genetic.FittestGenome = null;
+                Genetic.NumberOfGenerations = 0;
+                Genetic.FitnessCounter.Clear();
+            
+                buttonGenerateGenome.BackColor = timer1.Enabled ? Color.LightCoral : Color.DeepSkyBlue;
+                buttonGenerateGenome.Text = timer1.Enabled ? "Stop Evolution" : "Start Over";
+            }
+            else
+            {
+                Genetic.Population = Genetic.Generate_Population((int) numericUpDownStartPop.Value);
+                Genetic.FittestGenome = null;
+                Genetic.NumberOfGenerations = 0;
+                Genetic.FitnessCounter.Clear();
+
+                var (genome, generation) = Genetic.RunEvolution(0);
+                
+                labelFitness.Text = $@"Sequence of solution: {genome.DisplaySequence()}. Fitness: {Genetic.Fitness(genome)}";
+                labelGenome.Text = $@"Generation: {generation}";
+                ApplyColors(genome);
+            }
+            
         }
 
         private void ApplyColors(Genome genome)
@@ -105,6 +127,9 @@ namespace Automatic_Color_Filler
         {
             for (int i = 1; i <= 16; i++)
                 GetLabelByName($"label{i}").Text = "";
+
+            foreach (Control c in panel1.Controls)
+                c.Visible = false;
         }
     }
 }
