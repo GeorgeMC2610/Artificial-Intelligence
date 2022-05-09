@@ -16,13 +16,17 @@ namespace Automatic_Color_Filler
         public static List<int> FitnessCounter = new List<int>();
         
         /// <summary>
-        /// <b>Generates a <see cref="Genome"/> with a random sequence of colours.</b>
+        /// <b>Generates a <see cref="Genome"/> with random sequence of colours.</b>
         /// A Genome has a 32-bit sequence which determines what colour a box has.
+        /// Depending on what position a colour is in the sequence, it will appear on the graph.
+        ///
         /// Possible bits are:
-        /// - 00 blue
-        /// - 01 red
-        /// - 10 green
-        /// - 11 yellow
+        /// <list type="bullet">
+        /// <item><description><para><em><c>00</c> -> blue</em></para></description></item>
+        /// <item><description><para><em><c>01</c> -> red</em></para></description></item>
+        /// <item><description><para><em><c>10</c> -> green</em></para></description></item>
+        /// <item><description><para><em><c>11</c> -> yellow</em></para></description></item>
+        /// </list>
         /// </summary>
         /// <returns>A Genome with random colours.</returns>
         public static Genome Generate_Genome()
@@ -61,7 +65,7 @@ namespace Automatic_Color_Filler
         /// is 42, which means that all 16 boxes have different colours compared to their neighbours. 
         /// </summary>
         /// <param name="genome">The given Genome (containing 0 and 1).</param>
-        /// <returns></returns>
+        /// <returns>A number between 0 and 42 (inclusive).</returns>
         public static int Fitness(Genome genome)
         {
             if (genome.Sequence.Count == 0)
@@ -130,7 +134,12 @@ namespace Automatic_Color_Filler
             return fitness;
         }
         
-        
+        /// <summary>
+        /// Select a pair of the fittest Genomes from a Population.
+        /// </summary>
+        /// <param name="population">A population containing n <see cref="Genome"/>s (where n is greater than 1)</param>
+        /// <returns>A population containing two <see cref="Genome"/>s</returns>
+        /// <exception cref="Exception">Throws exception when the population contains exactly 0 or 1 Genomes.</exception>
         public static Population Selection_Pair(Population population)
         {
             switch (population.Genomes.Count)
@@ -148,6 +157,7 @@ namespace Automatic_Color_Filler
             }
         }
 
+        
         public static Genome[] Single_Point_Crossover(Genome a, Genome b)
         {
             int point = RNG.Next(1, 15);
