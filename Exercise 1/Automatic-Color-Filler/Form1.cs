@@ -112,7 +112,7 @@ namespace Automatic_Color_Filler
         
         private void ApplyColors(Genome genome)
         {
-            var colors = new Dictionary<string, Color>()
+            var colors = new Dictionary<string, Color>
             {
                 {"00", Color.CornflowerBlue},
                 {"01", Color.IndianRed},
@@ -122,6 +122,11 @@ namespace Automatic_Color_Filler
 
             for (int i = 0; i < 16; i++)
                 GetLabelByName($"label{i + 1}").BackColor = GetLabelByName($"label{i + 1}_{i + 1}").BackColor = colors[genome.Sequence[i]];
+        }
+
+        private void buttonGenerateRandom_Click(object sender, EventArgs e)
+        {
+            textBoxCustomGenome.Text = Genetic.Generate_Genome().DisplaySequence();
         }
     }
 }

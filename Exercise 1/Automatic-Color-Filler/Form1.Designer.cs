@@ -76,6 +76,7 @@
             this.buttonCustomGenome = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.checkBoxIterateGens = new System.Windows.Forms.CheckBox();
+            this.buttonGenerateRandom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.timer1)).BeginInit();
@@ -534,7 +535,7 @@
             // 
             this.textBoxCustomGenome.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxCustomGenome.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBoxCustomGenome.Location = new System.Drawing.Point(12, 461);
+            this.textBoxCustomGenome.Location = new System.Drawing.Point(12, 460);
             this.textBoxCustomGenome.MaxLength = 32;
             this.textBoxCustomGenome.Name = "textBoxCustomGenome";
             this.textBoxCustomGenome.Size = new System.Drawing.Size(356, 25);
@@ -543,10 +544,10 @@
             // buttonCustomGenome
             // 
             this.buttonCustomGenome.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCustomGenome.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (255)))), ((int) (((byte) (192)))));
-            this.buttonCustomGenome.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonCustomGenome.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.buttonCustomGenome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCustomGenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.buttonCustomGenome.Location = new System.Drawing.Point(374, 461);
+            this.buttonCustomGenome.Location = new System.Drawing.Point(506, 461);
             this.buttonCustomGenome.Name = "buttonCustomGenome";
             this.buttonCustomGenome.Size = new System.Drawing.Size(126, 25);
             this.buttonCustomGenome.TabIndex = 4;
@@ -558,7 +559,7 @@
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label20.Location = new System.Drawing.Point(12, 440);
+            this.label20.Location = new System.Drawing.Point(12, 439);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(189, 18);
             this.label20.TabIndex = 12;
@@ -575,6 +576,20 @@
             this.checkBoxIterateGens.Text = "Iterate Through Generations";
             this.checkBoxIterateGens.UseVisualStyleBackColor = true;
             // 
+            // buttonGenerateRandom
+            // 
+            this.buttonGenerateRandom.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonGenerateRandom.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (255)))), ((int) (((byte) (192)))));
+            this.buttonGenerateRandom.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonGenerateRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.buttonGenerateRandom.Location = new System.Drawing.Point(374, 461);
+            this.buttonGenerateRandom.Name = "buttonGenerateRandom";
+            this.buttonGenerateRandom.Size = new System.Drawing.Size(126, 25);
+            this.buttonGenerateRandom.TabIndex = 14;
+            this.buttonGenerateRandom.Text = "Generate Random";
+            this.buttonGenerateRandom.UseVisualStyleBackColor = false;
+            this.buttonGenerateRandom.Click += new System.EventHandler(this.buttonGenerateRandom_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,6 +597,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(955, 557);
+            this.Controls.Add(this.buttonGenerateRandom);
             this.Controls.Add(this.checkBoxIterateGens);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.buttonCustomGenome);
@@ -608,6 +624,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button buttonGenerateRandom;
 
         private System.Windows.Forms.CheckBox checkBoxIterateGens;
 
