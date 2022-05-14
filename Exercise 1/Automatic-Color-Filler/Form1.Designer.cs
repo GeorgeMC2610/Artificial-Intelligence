@@ -466,7 +466,7 @@
             this.numericUpDownStartPop.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.numericUpDownStartPop.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.numericUpDownStartPop.Location = new System.Drawing.Point(12, 358);
-            this.numericUpDownStartPop.Maximum = new decimal(new int[] {1000, 0, 0, 0});
+            this.numericUpDownStartPop.Maximum = new decimal(new int[] {50, 0, 0, 0});
             this.numericUpDownStartPop.Name = "numericUpDownStartPop";
             this.numericUpDownStartPop.Size = new System.Drawing.Size(54, 26);
             this.numericUpDownStartPop.TabIndex = 2;

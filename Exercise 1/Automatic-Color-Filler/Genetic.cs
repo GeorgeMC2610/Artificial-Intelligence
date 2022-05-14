@@ -57,82 +57,7 @@ namespace Automatic_Color_Filler
 
             return population;
         }
-
-        /// <summary>
-        /// <b>Determines how optimal a solution is.</b>
-        /// Since all boxes have to be coloured differently compared to their neighbours,
-        /// minimum fitness is 0, which means that all boxes have the same colour. Maximum fitness (optimal solution)
-        /// is 42, which means that all 16 boxes have different colours compared to their neighbours. 
-        /// </summary>
-        /// <param name="genome">The given Genome (containing 0 and 1).</param>
-        /// <returns>A number between 0 and 42 (inclusive).</returns>
-        public static int Fitness(Genome genome)
-        {
-            if (genome.Sequence.Count == 0)
-                throw new Exception("Cannot determine fitness of an empty genome.");
-            
-            int fitness = 0;
-            
-            //fitness goes up by one if the colours are different 
-            if (genome.Sequence[0] != genome.Sequence[1]) fitness++;
-            if (genome.Sequence[0] != genome.Sequence[2]) fitness++;
-            if (genome.Sequence[0] != genome.Sequence[3]) fitness++;
-            if (genome.Sequence[0] != genome.Sequence[12]) fitness++;
-            if (genome.Sequence[0] != genome.Sequence[14]) fitness++;
-            if (genome.Sequence[0] != genome.Sequence[15]) fitness++;
-            
-            if (genome.Sequence[1] != genome.Sequence[2]) fitness++;
-            if (genome.Sequence[1] != genome.Sequence[4]) fitness++;
-            if (genome.Sequence[1] != genome.Sequence[7]) fitness++;
-            if (genome.Sequence[1] != genome.Sequence[8]) fitness++;
-            if (genome.Sequence[1] != genome.Sequence[13]) fitness++;
-            if (genome.Sequence[1] != genome.Sequence[14]) fitness++;
-            if (genome.Sequence[1] != genome.Sequence[15]) fitness++;
-
-            if (genome.Sequence[2] != genome.Sequence[3]) fitness++;
-            if (genome.Sequence[2] != genome.Sequence[4]) fitness++;
-            if (genome.Sequence[2] != genome.Sequence[5]) fitness++;
-            
-            if (genome.Sequence[3] != genome.Sequence[5]) fitness++;
-            if (genome.Sequence[3] != genome.Sequence[12]) fitness++;
-            
-            if (genome.Sequence[4] != genome.Sequence[5]) fitness++;
-            if (genome.Sequence[4] != genome.Sequence[6]) fitness++;
-            if (genome.Sequence[4] != genome.Sequence[8]) fitness++;
-            if (genome.Sequence[4] != genome.Sequence[9]) fitness++;
-            
-            if (genome.Sequence[5] != genome.Sequence[6]) fitness++;
-            if (genome.Sequence[5] != genome.Sequence[10]) fitness++;
-            if (genome.Sequence[5] != genome.Sequence[12]) fitness++;
-            
-            if (genome.Sequence[6] != genome.Sequence[9]) fitness++;
-            if (genome.Sequence[6] != genome.Sequence[10]) fitness++;
-            
-            if (genome.Sequence[7] != genome.Sequence[8]) fitness++;
-            if (genome.Sequence[7] != genome.Sequence[13]) fitness++;
-            
-            if (genome.Sequence[8] != genome.Sequence[9]) fitness++;
-            if (genome.Sequence[8] != genome.Sequence[11]) fitness++;
-            if (genome.Sequence[8] != genome.Sequence[13]) fitness++;
-            
-            if (genome.Sequence[9] != genome.Sequence[10]) fitness++;
-            if (genome.Sequence[9] != genome.Sequence[11]) fitness++;
-            
-            if (genome.Sequence[10] != genome.Sequence[11]) fitness++;
-            if (genome.Sequence[10] != genome.Sequence[12]) fitness++;
-            
-            if (genome.Sequence[11] != genome.Sequence[12]) fitness++;
-            if (genome.Sequence[11] != genome.Sequence[13]) fitness++;
-            if (genome.Sequence[11] != genome.Sequence[14]) fitness++;
-            
-            if (genome.Sequence[12] != genome.Sequence[14]) fitness++;
-            
-            if (genome.Sequence[13] != genome.Sequence[14]) fitness++;
-            
-            if (genome.Sequence[14] != genome.Sequence[15]) fitness++;
-            
-            return fitness;
-        }
+        
         
         /// <summary>
         /// Select a pair of the fittest Genomes from a Population.
@@ -151,7 +76,7 @@ namespace Automatic_Color_Filler
                 default:
                 {
                     //σε αυτό το σημείο απλά παραδίνομαι στο Rider.
-                    var maxFitness = population.Genomes.OrderByDescending(Fitness).ToList();
+                    var maxFitness = population.Genomes.OrderByDescending(g => g.Fitness).ToList();
                     return new Population(maxFitness[0], maxFitness[1]);
                 }
             }
@@ -223,12 +148,12 @@ namespace Automatic_Color_Filler
         /// <returns>The fittest <see cref="Genome"/>, the number of Generations and the Fitness of the fittest Genome.</returns>
         public static Tuple<Genome, int, int> RunEvolution()
         {
-            Population.Genomes = Population.Genomes.OrderByDescending(Fitness).ToList();
+            Population.Genomes = Population.Genomes.OrderByDescending(g => g.Fitness).ToList();
 
             FittestGenome = Population.Genomes[0];
-            FitnessCounter.Add(Fitness(FittestGenome));
+            FitnessCounter.Add(FittestGenome.Fitness);
 
-            if (Fitness(Population.Genomes[0]) == 42)
+            if (Population.Genomes[0].Fitness == 42)
                 return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, FitnessCounter.Last());
             
             if (FitnessCounter.Count > 8 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 9])
@@ -251,7 +176,7 @@ namespace Automatic_Color_Filler
             Population = nextGeneration;
             NumberOfGenerations++;
 
-            return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, Fitness(FittestGenome));
+            return new Tuple<Genome, int, int>(FittestGenome, NumberOfGenerations, FittestGenome.Fitness);
         }
         
         /// <summary>
@@ -266,17 +191,17 @@ namespace Automatic_Color_Filler
 
             do
             {
-                Population.Genomes = Population.Genomes.OrderByDescending(Fitness).ToList();
+                Population.Genomes = Population.Genomes.OrderByDescending(g => g.Fitness).ToList();
 
                 FittestGenome = Population.Genomes[0];
-                FitnessCounter.Add(Fitness(FittestGenome));
+                FitnessCounter.Add(FittestGenome.Fitness);
 
-                if (Fitness(Population.Genomes[0]) == 42)
+                if (Population.Genomes[0].Fitness == 42)
                     return new Tuple<Genome, int>(FittestGenome, NumberOfGenerations);
 
                 if (FitnessCounter.Count > 8 && FitnessCounter.Last() == FitnessCounter[FitnessCounter.Count - 9])
                 {
-                    Population.Genomes.ForEach(o => Mutation(o, false, 100));
+                    Population.Genomes.ForEach(o => Mutation(o, true, 50));
                     FitnessCounter.Clear();
                 }
 

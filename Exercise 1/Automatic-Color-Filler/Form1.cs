@@ -105,7 +105,7 @@ namespace Automatic_Color_Filler
 
             panel1.BackgroundImage = null;
             
-            labelFitness.Text = $@"Sequence of solution: {genome.DisplaySequence()}. Fitness: {Genetic.Fitness(genome)}";
+            labelFitness.Text = $@"Sequence of solution: {genome.DisplaySequence()}. Fitness: {genome.Fitness}";
             labelGenome.Text = generations == -1 ? @"(Custom Genome)" : $@"Generation: {generations}";
             ApplyColors(genome);
         }
