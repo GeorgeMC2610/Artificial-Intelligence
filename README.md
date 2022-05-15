@@ -31,3 +31,7 @@ Since we have four possible colours, we can define them to be represented as 2-b
 - 11 is yellow
 
 Also, there are 16 boxes to give colour to. Which means that we have 2 bits for every box; 16 × 2 = 32 bits to define a solution. For example, "0000000000000000000000000000000000" means that all boxes have the same colour (blue).
+
+### How does the fitness function work?
+
+I created the `Genome` class. A `Genome` has an attribute; the `Sequence`, which is a list of Strings representing a solution, as it is explained above. ***The `Fitness` attribute, is an integer number. It goes up by one, for every box that has a different colour compared to a neighbour.*** Minimum fitness is 0, which means that all boxes have the same colour. Maximum fitness is 42, which means that there is no box that has the same colour as any of its neighbours.
