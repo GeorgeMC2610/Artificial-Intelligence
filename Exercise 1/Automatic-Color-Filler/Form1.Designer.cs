@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonGenerateGenome = new System.Windows.Forms.Button();
             this.labelFitness = new System.Windows.Forms.Label();
             this.labelGenome = new System.Windows.Forms.Label();
@@ -612,6 +613,7 @@
             this.Controls.Add(this.labelGenome);
             this.Controls.Add(this.labelFitness);
             this.Controls.Add(this.buttonGenerateGenome);
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

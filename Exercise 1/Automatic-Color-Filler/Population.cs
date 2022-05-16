@@ -9,6 +9,8 @@ namespace Automatic_Color_Filler
         {
             Genomes = new List<Genome>();
         }
+        
+        public List<Genome> Genomes;
 
         public Population(List<Genome> Genomes)
         {
@@ -34,7 +36,5 @@ namespace Automatic_Color_Filler
                 return false;
             return !population.Genomes.Where((t, i) => !Genomes[i].Equals(t)).Any();
         }
-
-        public List<Genome> Genomes;
     }
 }
