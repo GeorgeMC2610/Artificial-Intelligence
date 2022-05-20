@@ -19,8 +19,12 @@
 + Generate offsprings using a single point crossover function.
 + Use mutations to find better solutions.
 
+<br>
+
 # My Approach with C#
-#### I made a Windows Forms application, to visualize how every box should be coloured correctly. In this app, the user clicks the button and the program starts generating solutions until it finds the best one.
+### I made a Windows Forms application, to visualize how every box should be coloured correctly. In this app, the user clicks the button and the program starts generating solutions until it finds the best one.
+
+This CSP has many optimal solutions, so the goal is to find one of them. In the main loop, the program generates a starting population of genomes, all containing randomly generated solutions. The Genomes will be sorted by their **fitness score** and the fittest genome will be held as the one to remain, in order to **generate offsprings** based on it. **The program doesn't stop until a genome has a fitness score of 42, which means it's an optimal solution**.
 
 ## How is a solution represented?
 
