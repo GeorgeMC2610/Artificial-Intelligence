@@ -43,3 +43,15 @@ I created the `Genome` class. A `Genome` has an attribute; the `Sequence`, which
 ## How is the number of the starting population determined?
 
 **The optimal starting population is 15 genomes.** Although, the user has the capability to change this number, through a numeric up-down control. Minimum starting population is 3 and maximum is 150. Contrary to what one would assume, adding more genomes in the starting population, does **not** necessarily mean that the program will find a solution faster. Finding a solution is single-handedly bound to random chance. 
+
+</br>
+
+## How are offsprings generated?
+
+In the main loop, the fittest solutions are selected in order to generate offsprings. While keeping the fittest genome unaltered, the program generates offsprings using a crossover function. **The crossover function takes two genomes and interchanges their bits in a single point (Single-Point Crossover function).** The point, where the two solutions start to swap, is selected randomly. **The fittest genomes are more likely to be selected and to be bred, which increases the chance of finding a better solution**.
+
+</br>
+
+# How often does a mutation happen?
+
+In the main loop, **there is a 30% for a mutation to happen on an offspring**. A mutation usually happens to one bit only, but it is possible to apply random chance to all bits. Although, if the program gets stuck to a local maxima for 8 times in a row, it mutates all genomes of the population. This happens because the best solution might not be able to be found otherwise.
