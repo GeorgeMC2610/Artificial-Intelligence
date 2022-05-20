@@ -20,9 +20,9 @@
 + Use mutations to find better solutions.
 
 # My Approach with C#
-## I made a WinForms application, to visualize how every box should be coloured correctly. In this app, the user clicks the button and the program starts generating solutions until it finds the best one.
+#### I made a Windows Forms application, to visualize how every box should be coloured correctly. In this app, the user clicks the button and the program starts generating solutions until it finds the best one.
 
-### How is a solution represented?
+## How is a solution represented?
 
 Since we have four possible colours, we can define them to be represented as 2-bit numbers:
 - 00 is blue
@@ -32,6 +32,14 @@ Since we have four possible colours, we can define them to be represented as 2-b
 
 Also, there are 16 boxes to give colour to. Which means that we have 2 bits for every box; 16 × 2 = 32 bits to define a solution. For example, "0000000000000000000000000000000000" means that all boxes have the same colour (blue).
 
-### How does the fitness function work?
+</br>
+
+## How does the fitness function work?
 
 I created the `Genome` class. A `Genome` has an attribute; the `Sequence`, which is a list of Strings representing a solution, as it is explained above. ***The `Fitness` attribute, is an integer number. It goes up by one, for every box that has a different colour compared to a neighbour.*** Minimum fitness is 0, which means that all boxes have the same colour. Maximum fitness is 42, which means that there is no box that has the same colour as any of its neighbours.
+
+</br>
+
+## How is the number of the starting population determined?
+
+**The optimal starting population is 15 genomes.** Although, the user has the capability to change this number, through a numeric up-down control. Minimum starting population is 3 and maximum is 150. Contrary to what one would assume, adding more genomes in the starting population, does **not** necessarily mean that the program will find a solution faster. Finding a solution is single-handedly bound to random chance. 
