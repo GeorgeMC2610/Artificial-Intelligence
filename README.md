@@ -1,6 +1,5 @@
 # Artificial Intelligence (GR: Τεχνητή Νοημοσύνη)
-## 6th Semester Course
-### The goal was to make a program that would find a solution to a problem using Genetic Algorithms. Two basic problems were given; The Traveling Salesman Problem and a Constraint Satisfaction Problem. Students had to make a program for one of those two problems, to get the 100% of the grade.
+## The goal was to make a program that would find a solution to a problem using Genetic Algorithms. Two basic problems were given; The Traveling Salesman Problem and a Constraint Satisfaction Problem. Students had to make a program for one of those two problems, to get the 100% of the grade.
 
 ***Exercise A***: Make a program that generates a solution for the Traveling Salesman Problem as it is depicted below:
 
