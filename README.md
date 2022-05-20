@@ -52,6 +52,6 @@ In the main loop, the fittest solutions are selected in order to generate offspr
 
 </br>
 
-# How often does a mutation happen?
+## How often does a mutation happen?
 
 In the main loop, **there is a 30% for a mutation to happen on an offspring**. A mutation usually happens to one bit only, but it is possible to apply random chance to all bits. Although, if the program gets stuck to a local maxima for 8 times in a row, it mutates all genomes of the population. This happens because the best solution might not be able to be found otherwise.
