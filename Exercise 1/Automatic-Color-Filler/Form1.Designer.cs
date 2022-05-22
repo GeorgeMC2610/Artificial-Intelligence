@@ -79,17 +79,17 @@
             this.checkBoxIterateGens = new System.Windows.Forms.CheckBox();
             this.buttonGenerateRandom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.timer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownInterval)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartPop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterval)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGenerateGenome
             // 
-            this.buttonGenerateGenome.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonGenerateGenome.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (255)))), ((int) (((byte) (192)))));
+            this.buttonGenerateGenome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonGenerateGenome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonGenerateGenome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGenerateGenome.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.buttonGenerateGenome.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGenerateGenome.Location = new System.Drawing.Point(12, 501);
             this.buttonGenerateGenome.Name = "buttonGenerateGenome";
             this.buttonGenerateGenome.Size = new System.Drawing.Size(931, 44);
@@ -100,8 +100,8 @@
             // 
             // labelFitness
             // 
-            this.labelFitness.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFitness.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelFitness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFitness.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFitness.Location = new System.Drawing.Point(12, 9);
             this.labelFitness.Name = "labelFitness";
             this.labelFitness.Size = new System.Drawing.Size(892, 23);
@@ -110,7 +110,7 @@
             // 
             // labelGenome
             // 
-            this.labelGenome.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelGenome.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGenome.Location = new System.Drawing.Point(12, 32);
             this.labelGenome.Name = "labelGenome";
             this.labelGenome.Size = new System.Drawing.Size(892, 23);
@@ -161,7 +161,7 @@
             // label16_16
             // 
             this.label16_16.BackColor = System.Drawing.Color.Transparent;
-            this.label16_16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label16_16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16_16.Location = new System.Drawing.Point(367, 333);
             this.label16_16.Name = "label16_16";
             this.label16_16.Size = new System.Drawing.Size(32, 25);
@@ -171,7 +171,7 @@
             // label15_15
             // 
             this.label15_15.BackColor = System.Drawing.Color.Transparent;
-            this.label15_15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label15_15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15_15.Location = new System.Drawing.Point(278, 290);
             this.label15_15.Name = "label15_15";
             this.label15_15.Size = new System.Drawing.Size(36, 23);
@@ -181,7 +181,7 @@
             // label14_14
             // 
             this.label14_14.BackColor = System.Drawing.Color.Transparent;
-            this.label14_14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label14_14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14_14.Location = new System.Drawing.Point(189, 293);
             this.label14_14.Name = "label14_14";
             this.label14_14.Size = new System.Drawing.Size(31, 20);
@@ -191,7 +191,7 @@
             // label13_13
             // 
             this.label13_13.BackColor = System.Drawing.Color.Transparent;
-            this.label13_13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label13_13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13_13.Location = new System.Drawing.Point(326, 251);
             this.label13_13.Name = "label13_13";
             this.label13_13.Size = new System.Drawing.Size(31, 24);
@@ -201,7 +201,7 @@
             // label12_12
             // 
             this.label12_12.BackColor = System.Drawing.Color.Transparent;
-            this.label12_12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label12_12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12_12.Location = new System.Drawing.Point(229, 251);
             this.label12_12.Name = "label12_12";
             this.label12_12.Size = new System.Drawing.Size(32, 24);
@@ -211,7 +211,7 @@
             // label11_11
             // 
             this.label11_11.BackColor = System.Drawing.Color.Transparent;
-            this.label11_11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label11_11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11_11.Location = new System.Drawing.Point(273, 213);
             this.label11_11.Name = "label11_11";
             this.label11_11.Size = new System.Drawing.Size(32, 32);
@@ -221,7 +221,7 @@
             // label10_10
             // 
             this.label10_10.BackColor = System.Drawing.Color.Transparent;
-            this.label10_10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label10_10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10_10.Location = new System.Drawing.Point(189, 213);
             this.label10_10.Name = "label10_10";
             this.label10_10.Size = new System.Drawing.Size(31, 32);
@@ -231,7 +231,7 @@
             // label9_9
             // 
             this.label9_9.BackColor = System.Drawing.Color.Transparent;
-            this.label9_9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label9_9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9_9.Location = new System.Drawing.Point(132, 214);
             this.label9_9.Name = "label9_9";
             this.label9_9.Size = new System.Drawing.Size(22, 32);
@@ -241,7 +241,7 @@
             // label8_8
             // 
             this.label8_8.BackColor = System.Drawing.Color.Transparent;
-            this.label8_8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label8_8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8_8.Location = new System.Drawing.Point(77, 234);
             this.label8_8.Name = "label8_8";
             this.label8_8.Size = new System.Drawing.Size(32, 28);
@@ -251,7 +251,7 @@
             // label7_7
             // 
             this.label7_7.BackColor = System.Drawing.Color.Transparent;
-            this.label7_7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label7_7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7_7.Location = new System.Drawing.Point(240, 156);
             this.label7_7.Name = "label7_7";
             this.label7_7.Size = new System.Drawing.Size(32, 36);
@@ -261,7 +261,7 @@
             // label6_6
             // 
             this.label6_6.BackColor = System.Drawing.Color.Transparent;
-            this.label6_6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label6_6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6_6.Location = new System.Drawing.Point(286, 116);
             this.label6_6.Name = "label6_6";
             this.label6_6.Size = new System.Drawing.Size(32, 36);
@@ -271,7 +271,7 @@
             // label5_5
             // 
             this.label5_5.BackColor = System.Drawing.Color.Transparent;
-            this.label5_5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label5_5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5_5.Location = new System.Drawing.Point(170, 116);
             this.label5_5.Name = "label5_5";
             this.label5_5.Size = new System.Drawing.Size(31, 36);
@@ -281,7 +281,7 @@
             // label4_4
             // 
             this.label4_4.BackColor = System.Drawing.Color.Transparent;
-            this.label4_4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label4_4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4_4.Location = new System.Drawing.Point(367, 96);
             this.label4_4.Name = "label4_4";
             this.label4_4.Size = new System.Drawing.Size(32, 36);
@@ -291,7 +291,7 @@
             // label3_3
             // 
             this.label3_3.BackColor = System.Drawing.Color.Transparent;
-            this.label3_3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label3_3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3_3.Location = new System.Drawing.Point(220, 63);
             this.label3_3.Name = "label3_3";
             this.label3_3.Size = new System.Drawing.Size(24, 21);
@@ -301,7 +301,7 @@
             // label2_2
             // 
             this.label2_2.BackColor = System.Drawing.Color.Transparent;
-            this.label2_2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2_2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2_2.Location = new System.Drawing.Point(77, 96);
             this.label2_2.Name = "label2_2";
             this.label2_2.Size = new System.Drawing.Size(32, 36);
@@ -311,7 +311,7 @@
             // label1_1
             // 
             this.label1_1.BackColor = System.Drawing.Color.Transparent;
-            this.label1_1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1_1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1_1.Location = new System.Drawing.Point(240, 23);
             this.label1_1.Name = "label1_1";
             this.label1_1.Size = new System.Drawing.Size(21, 24);
@@ -321,7 +321,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(207, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 75);
@@ -330,7 +330,7 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(244, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 96);
@@ -339,7 +339,7 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(155, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 96);
@@ -348,7 +348,7 @@
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(240, 190);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 57);
@@ -357,7 +357,7 @@
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(170, 190);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 57);
@@ -366,7 +366,7 @@
             // label16
             // 
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(269, 323);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(209, 40);
@@ -375,7 +375,7 @@
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(240, 285);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(78, 38);
@@ -384,7 +384,7 @@
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(152, 285);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(92, 38);
@@ -393,7 +393,7 @@
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(207, 247);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 43);
@@ -402,7 +402,7 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(278, 190);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(93, 95);
@@ -411,7 +411,7 @@
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(116, 190);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 95);
@@ -420,7 +420,7 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(62, 190);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 133);
@@ -429,7 +429,7 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(281, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 134);
@@ -438,7 +438,7 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(189, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 38);
@@ -447,7 +447,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(27, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(252, 307);
@@ -456,7 +456,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(451, 306);
@@ -465,18 +465,18 @@
             // numericUpDownStartPop
             // 
             this.numericUpDownStartPop.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numericUpDownStartPop.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.numericUpDownStartPop.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownStartPop.Location = new System.Drawing.Point(12, 358);
-            this.numericUpDownStartPop.Maximum = new decimal(new int[] {50, 0, 0, 0});
+            this.numericUpDownStartPop.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             this.numericUpDownStartPop.Name = "numericUpDownStartPop";
             this.numericUpDownStartPop.Size = new System.Drawing.Size(54, 26);
             this.numericUpDownStartPop.TabIndex = 2;
-            this.numericUpDownStartPop.Value = new decimal(new int[] {15, 0, 0, 0});
+            this.numericUpDownStartPop.Value = new decimal(new int[] { 50, 0, 0, 0 });
             // 
             // labelStartingPopulation
             // 
             this.labelStartingPopulation.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelStartingPopulation.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.labelStartingPopulation.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStartingPopulation.Location = new System.Drawing.Point(12, 332);
             this.labelStartingPopulation.Name = "labelStartingPopulation";
             this.labelStartingPopulation.Size = new System.Drawing.Size(189, 23);
@@ -492,7 +492,7 @@
             // label17
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label17.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label17.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(12, 252);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(189, 23);
@@ -502,20 +502,20 @@
             // numericUpDownInterval
             // 
             this.numericUpDownInterval.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.numericUpDownInterval.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.numericUpDownInterval.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDownInterval.Location = new System.Drawing.Point(12, 278);
-            this.numericUpDownInterval.Maximum = new decimal(new int[] {10000, 0, 0, 0});
-            this.numericUpDownInterval.Minimum = new decimal(new int[] {20, 0, 0, 0});
+            this.numericUpDownInterval.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            this.numericUpDownInterval.Minimum = new decimal(new int[] { 500, 0, 0, 0 });
             this.numericUpDownInterval.Name = "numericUpDownInterval";
             this.numericUpDownInterval.Size = new System.Drawing.Size(99, 26);
             this.numericUpDownInterval.TabIndex = 1;
-            this.numericUpDownInterval.Value = new decimal(new int[] {500, 0, 0, 0});
+            this.numericUpDownInterval.Value = new decimal(new int[] { 500, 0, 0, 0 });
             this.numericUpDownInterval.ValueChanged += new System.EventHandler(this.numericUpDownInterval_ValueChanged);
             // 
             // label18
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(117, 280);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(75, 23);
@@ -525,7 +525,7 @@
             // label19
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label19.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label19.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(72, 361);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 23);
@@ -534,8 +534,8 @@
             // 
             // textBoxCustomGenome
             // 
-            this.textBoxCustomGenome.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxCustomGenome.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.textBoxCustomGenome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxCustomGenome.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCustomGenome.Location = new System.Drawing.Point(12, 460);
             this.textBoxCustomGenome.MaxLength = 32;
             this.textBoxCustomGenome.Name = "textBoxCustomGenome";
@@ -544,10 +544,10 @@
             // 
             // buttonCustomGenome
             // 
-            this.buttonCustomGenome.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonCustomGenome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCustomGenome.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.buttonCustomGenome.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCustomGenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.buttonCustomGenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCustomGenome.Location = new System.Drawing.Point(506, 461);
             this.buttonCustomGenome.Name = "buttonCustomGenome";
             this.buttonCustomGenome.Size = new System.Drawing.Size(126, 25);
@@ -558,8 +558,8 @@
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(12, 439);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(189, 18);
@@ -568,8 +568,11 @@
             // 
             // checkBoxIterateGens
             // 
-            this.checkBoxIterateGens.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxIterateGens.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.checkBoxIterateGens.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxIterateGens.Checked = true;
+            this.checkBoxIterateGens.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxIterateGens.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBoxIterateGens.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxIterateGens.Location = new System.Drawing.Point(651, 461);
             this.checkBoxIterateGens.Name = "checkBoxIterateGens";
             this.checkBoxIterateGens.Size = new System.Drawing.Size(275, 24);
@@ -579,10 +582,10 @@
             // 
             // buttonGenerateRandom
             // 
-            this.buttonGenerateRandom.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonGenerateRandom.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (255)))), ((int) (((byte) (192)))));
+            this.buttonGenerateRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonGenerateRandom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonGenerateRandom.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonGenerateRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.buttonGenerateRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGenerateRandom.Location = new System.Drawing.Point(374, 461);
             this.buttonGenerateRandom.Name = "buttonGenerateRandom";
             this.buttonGenerateRandom.Size = new System.Drawing.Size(126, 25);
@@ -613,16 +616,16 @@
             this.Controls.Add(this.labelGenome);
             this.Controls.Add(this.labelFitness);
             this.Controls.Add(this.buttonGenerateGenome);
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Constraint Satisfaction Problem Solver";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownStartPop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.timer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDownInterval)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartPop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInterval)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
