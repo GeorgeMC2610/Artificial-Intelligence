@@ -61,3 +61,29 @@ In the main loop, the fittest solutions are selected in order to generate offspr
 ## How often does a mutation happen?
 
 In the main loop, **there is a 30% for a mutation to happen on an offspring**. A mutation usually happens to one bit only, but it is possible to apply random chance to all bits. Although, if the program gets stuck to a local maxima for 8 times in a row, it mutates all genomes of the population. This happens because the best solution might not be able to be found otherwise.
+
+</br>
+
+# Using The App
+
+This application is available for download and can be opened by navigating through the bin/Debug folders. Make sure you are running the app in a **Windows (7/8/10/11) Machine**.
+
+## Opening Screen
+
+This is what you see, once you open the app. At first, all boxes start with no colour.
+
+<img src="Exercise 1/opening.png" alt="Opening Screen" width=75%>
+
+<br>
+
+## Finding A Solution
+
+In order to find a solution click on the ***Start Finding Solutions*** button. The program will start the process of finding a "best solution" and will stop when it finds one. **Note that, sometimes, the program will take a notably long time to finish.**
+
+<br>
+
+### Without Iterating Through Generations
+
+If the user wants to seek for a best solution immediately, the checkbox ***Iterate Through Generations*** must be unticked. With this setting turned off, the program finds a best solution faster, **but it might not respond until then**.
+
+<img src="Exercise 1/csp3.gif" alt="No Iteration" width=75%>
