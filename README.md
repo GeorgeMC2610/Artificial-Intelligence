@@ -68,6 +68,8 @@ In the main loop, **there is a 30% for a mutation to happen on an offspring**. A
 
 This application is available for download and can be opened by navigating through the bin/Debug folders. Make sure you are running the app in a **Windows (7/8/10/11) Machine**.
 
+<br>
+
 ## Opening Screen
 
 This is what you see, once you open the app. At first, all boxes start with no colour.
@@ -82,8 +84,25 @@ In order to find a solution click on the ***Start Finding Solutions*** button. T
 
 <br>
 
+### Iterating Through Generations
+
+It is rather interesting to see how the program finds a best solution, by seeing **the fittest genome from each generation**. Every half a second (as this is the default interval) the program will jump to the next generation; each time showing the fittest genome and how it got to the end. As said before, the program stops until the program actually finds a best solution (the following example was rather fast).
+
+<img src="Exercise 1/csp4.gif" alt="Iteration" width=75%>
+
+<br>
+
 ### Without Iterating Through Generations
 
 If the user wants to seek for a best solution immediately, the checkbox ***Iterate Through Generations*** must be unticked. With this setting turned off, the program finds a best solution faster, **but it might not respond until then**.
 
 <img src="Exercise 1/csp3.gif" alt="No Iteration" width=75%>
+
+<br>
+
+## Manually Handling A Genome
+
+The user is able to manually solve this problem and examine a solution using the textbox located in the bottom-left of the application. The solution can be tested by pressing the ***Calculate Fitness*** button and then checking its fitness score. Some useful things to remember:
++ 0 fitness is the lowest score (means that every box has the same colour as all of its neighbours).
++ 42 fitness is the best score (means that no box has the same colour as any of its neighbours).
++ There must be exactly 32 bits in a solution.
